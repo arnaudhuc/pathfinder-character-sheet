@@ -2,14 +2,14 @@
 import { jsx } from '@emotion/core';
 import { NumberDisplayInfo } from './NumberDisplayInfo';
 
-interface NumberDisplay {
+interface INumberDisplay {
 	numberToDisplay: number;
 	messageLeft?: string | number;
 	messageRight?: string | number;
 	isLeftDark?: boolean;
 }
 
-export const NumberDisplay: React.FC<NumberDisplay> = props => {
+export const NumberDisplay: React.FC<INumberDisplay> = (props) => {
 	const {
 		messageLeft,
 		messageRight,
@@ -40,7 +40,6 @@ export const NumberDisplay: React.FC<NumberDisplay> = props => {
 			>
 				<span
 					css={{
-						fontFamily: 'Arial',
 						fontSize: '28px',
 					}}
 				>
