@@ -21,7 +21,7 @@ const border = (isLeft: boolean) => {
 	}
 };
 
-export const NumberDisplayInfo: React.FC<NumberDisplayInfoLeft> = props => {
+export const NumberDisplayInfo: React.FC<NumberDisplayInfoLeft> = (props) => {
 	const { message, isLeftDark, isLeft } = props;
 	return (
 		<div
