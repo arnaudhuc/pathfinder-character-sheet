@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
+import { common } from '../../style/common';
 
 interface IBoxTitle {
 	title: string;
@@ -11,7 +12,7 @@ export const BoxTitle: React.FC<IBoxTitle> = (props) => {
 	return (
 		<div
 			css={{
-				background: isLight ? '#8d8d8d' : 'black',
+				background: isLight ? common.grey : common.black,
 				color: 'white',
 				height: '30px',
 				display: 'flex',

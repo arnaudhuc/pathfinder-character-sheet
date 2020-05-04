@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
+import { common } from '../../style/common';
 
 interface NumberDisplayInfoLeft {
 	message: string | number;
@@ -8,15 +9,15 @@ interface NumberDisplayInfoLeft {
 }
 
 const getBackgroundColor = (isLeft: boolean, isLeftDark: boolean): string => {
-	if (isLeftDark) return '#000';
-	if (!isLeft) return '#fff';
-	return '#bdbdbd';
+	if (isLeftDark) return common.black;
+	if (!isLeft) return common.white;
+	return common.grey;
 };
 
 const border = (isLeft: boolean) => {
 	if (!isLeft) {
 		return {
-			border: '2px solid black',
+			border: `2px solid ${common.black}`,
 		};
 	}
 };
@@ -39,7 +40,7 @@ export const NumberDisplayInfo: React.FC<NumberDisplayInfoLeft> = (props) => {
 			<div
 				css={{
 					transform: 'rotate(-45deg)',
-					color: isLeft ? '#fff' : '#000',
+					color: isLeft ? common.white : common.black,
 					width: isLeft ? '50px' : '46px',
 					height: isLeft ? '50px' : '46px',
 					display: 'flex',
