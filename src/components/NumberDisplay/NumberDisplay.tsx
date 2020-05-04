@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { NumberDisplayInfo } from './NumberDisplayInfo';
+import { common } from '../../style/common';
 
 interface INumberDisplay {
 	numberToDisplay: number;
@@ -24,7 +25,7 @@ export const NumberDisplay: React.FC<INumberDisplay> = (props) => {
 				height: '70px',
 				transform: 'rotate(45deg)',
 				border: '7px solid',
-				borderColor: isLeftDark ? '#bdbdbd' : 'black',
+				borderColor: isLeftDark ? common.grey : common.black,
 				position: 'relative',
 			}}
 		>

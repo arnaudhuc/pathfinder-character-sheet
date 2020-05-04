@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
+import { common } from '../../style/common';
 
 interface IMarker {
 	markers: string[];
@@ -17,7 +18,7 @@ export const Marker: React.FC<IMarker> = (props) => {
 				<div
 					key={index}
 					css={{
-						border: '5px solid #bdbdbd',
+						border: `5px solid ${common.grey}`,
 						width: '20px',
 						height: '20px',
 						display: 'flex',
@@ -27,7 +28,7 @@ export const Marker: React.FC<IMarker> = (props) => {
 						position: 'absolute',
 						top: index % 2 ? '10px' : '0',
 						left: `${index * 30}px`,
-						color: '#8d8d8d',
+						color: common.greyDark,
 					}}
 				>
 					<span css={{ transform: 'rotate(-45deg)' }}>{marker}</span>
