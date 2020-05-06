@@ -9,9 +9,7 @@ import Theme from '../src/themes/theme';
 const StylesDecorator = (storyFn) => (
 	<StylesProvider injectFirst>
 		<CssBaseline />
-		<StyledThemeProvider theme={Theme}>
-			<MuiThemeProvider theme={Theme}>{storyFn()}</MuiThemeProvider>
-		</StyledThemeProvider>
+		<MuiThemeProvider theme={Theme}>{storyFn()}</MuiThemeProvider>
 	</StylesProvider>
 );
 
