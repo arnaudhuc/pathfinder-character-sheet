@@ -1,29 +1,22 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import { common } from '../../style/common';
+import { AppBar, Toolbar, Typography } from '@material-ui/core';
+import { EColor } from '../../enums/button';
 
 interface IBoxTitle {
 	title: string;
-	isLight?: boolean;
+	color: EColor;
 }
 
 export const BoxTitle: React.FC<IBoxTitle> = (props) => {
-	const { title, isLight = false } = props;
+	const { title, color } = props;
 	return (
-		<div
-			css={{
-				background: isLight ? common.grey : common.black,
-				color: 'white',
-				height: '30px',
-				display: 'flex',
-				alignItems: 'center',
-				justifyContent: isLight ? 'left' : 'center',
-				textTransform: 'uppercase',
-				fontSize: '20px',
-				paddingLeft: isLight ? '10px' : '0',
-			}}
-		>
-			{title}
-		</div>
+		<AppBar position="fixed" color={color}>
+			<Toolbar>
+				<Typography variant="h6" color="inherit">
+					{title}
+				</Typography>
+			</Toolbar>
+		</AppBar>
 	);
 };

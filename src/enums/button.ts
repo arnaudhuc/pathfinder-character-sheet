@@ -1,4 +1,4 @@
-export enum EButtonType {
+export enum EColor {
 	DEFAULT = 'default',
 	PRIMARY = 'primary',
 	SECONDARY = 'secondary',

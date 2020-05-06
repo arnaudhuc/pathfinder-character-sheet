@@ -18,9 +18,9 @@ export const Marker: React.FC<IMarker> = (props) => {
 				<div
 					key={index}
 					css={{
-						border: `5px solid ${common.grey}`,
-						width: '20px',
-						height: '20px',
+						border: `3px solid ${common.grey}`,
+						width: '30px',
+						height: '30px',
 						display: 'flex',
 						alignItems: 'center',
 						justifyContent: 'center',
