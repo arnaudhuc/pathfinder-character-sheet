@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { NumberDisplayInfo } from './NumberDisplayInfo';
-import { common } from '../../style/common';
+import { overridings as theme } from '../../themes/theme';
 
 interface INumberDisplay {
 	numberToDisplay: number;
@@ -24,15 +24,17 @@ export const NumberDisplay: React.FC<INumberDisplay> = (props) => {
 				width: '70px',
 				height: '70px',
 				transform: 'rotate(45deg)',
-				border: '7px solid',
-				borderColor: isLeftDark ? common.grey : common.black,
+				border: '4px solid',
+				borderColor: isLeftDark
+					? theme.palette.primary.main
+					: theme.palette.primary.dark,
 				position: 'relative',
 			}}
 		>
 			<div
 				css={{
-					width: '70px',
-					height: '70px',
+					width: '65px',
+					height: '62px',
 					transform: 'rotate(-45deg)',
 					display: 'flex',
 					justifyContent: 'center',
