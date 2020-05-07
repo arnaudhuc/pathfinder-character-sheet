@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Marker should render multiple marker 1`] = `
+<div
+  className="css-1naiqne-Marker"
+>
+  <div
+    className="css-v0yoxx"
+  >
+    <span
+      className="css-2faz1g"
+    >
+      1
+    </span>
+  </div>
+  <div
+    className="css-vthqyb"
+  >
+    <span
+      className="css-2faz1g"
+    >
+      2
+    </span>
+  </div>
+  <div
+    className="css-unb8yr"
+  >
+    <span
+      className="css-2faz1g"
+    >
+      3
+    </span>
+  </div>
+  <div
+    className="css-6gwuo8"
+  >
+    <span
+      className="css-2faz1g"
+    >
+      4
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Marker should render with default props 1`] = `
+<div
+  className="css-1naiqne-Marker"
+>
+  <div
+    className="css-v0yoxx"
+  >
+    <span
+      className="css-2faz1g"
+    >
+      1
+    </span>
+  </div>
+</div>
+`;

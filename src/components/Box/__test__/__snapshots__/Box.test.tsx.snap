@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Box should render with default props 1`] = `
+<div
+  className="MuiPaper-root MuiCard-root makeStyles-root-1 MuiPaper-elevation1 MuiPaper-rounded"
+  onClick={[Function]}
+>
+  <div
+    className="MuiCardContent-root"
+  >
+    <h2
+      className="MuiTypography-root MuiTypography-body1"
+    >
+      Test
+    </h2>
+    <hr
+      className="MuiDivider-root"
+    />
+    <p>
+      Children of the box
+    </p>
+  </div>
+</div>
+`;
