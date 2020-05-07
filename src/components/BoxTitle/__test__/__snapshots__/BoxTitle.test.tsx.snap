@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BoxTitle should render with default props 1`] = `
+<header
+  className="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed MuiPaper-elevation4"
+>
+  <div
+    className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+  >
+    <h2
+      className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit"
+    >
+      Valeur
+    </h2>
+  </div>
+</header>
+`;
+
+exports[`BoxTitle should render with secondary color 1`] = `
+<header
+  className="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorSecondary mui-fixed MuiPaper-elevation4"
+>
+  <div
+    className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+  >
+    <h2
+      className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit"
+    >
+      Valeur
+    </h2>
+  </div>
+</header>
+`;

@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NumberDisplay should render with default props 1`] = `
+<div
+  className="css-1xdfrjn-NumberDisplay"
+>
+  <div
+    className="css-1oz0q46-NumberDisplay"
+  >
+    <span
+      className="css-1gp7egd-NumberDisplay"
+    >
+      12
+    </span>
+    <div
+      className="css-4mbg8w-NumberDisplayInfo"
+    >
+      <div
+        className="css-bl4yr9-NumberDisplayInfo"
+      >
+        <span>
+          CA
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`NumberDisplay should render with right value 1`] = `
+<div
+  className="css-7zvqsh-NumberDisplay"
+>
+  <div
+    className="css-1oz0q46-NumberDisplay"
+  >
+    <span
+      className="css-1gp7egd-NumberDisplay"
+    >
+      12
+    </span>
+    <div
+      className="css-17cu81j-NumberDisplayInfo"
+    >
+      <div
+        className="css-o0gr1t-NumberDisplayInfo"
+      >
+        <span>
+          CA
+        </span>
+      </div>
+    </div>
+    <div
+      className="css-1n5dk3r-NumberDisplayInfo"
+    >
+      <div
+        className="css-1yxj2i3-NumberDisplayInfo"
+      >
+        <span>
+          -5
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
