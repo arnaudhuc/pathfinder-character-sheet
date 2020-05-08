@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import { common } from '../../style/common';
-
+import { MarkerUnit } from './MarkerUnit';
 interface IMarker {
 	markers: string[];
 }
@@ -15,24 +14,7 @@ export const Marker: React.FC<IMarker> = (props) => {
 			}}
 		>
 			{markers.map((marker, index) => (
-				<div
-					key={index}
-					css={{
-						border: `3px solid ${common.grey}`,
-						width: '30px',
-						height: '30px',
-						display: 'flex',
-						alignItems: 'center',
-						justifyContent: 'center',
-						transform: 'rotate(45deg)',
-						position: 'absolute',
-						top: index % 2 ? '10px' : '0',
-						left: `${index * 30}px`,
-						color: common.greyDark,
-					}}
-				>
-					<span css={{ transform: 'rotate(-45deg)' }}>{marker}</span>
-				</div>
+				<MarkerUnit key={index} index={index} marker={marker} />
 			))}
 		</div>
 	);
