@@ -5,37 +5,41 @@ exports[`Marker should render multiple marker 1`] = `
   className="css-1naiqne-Marker"
 >
   <div
-    className="css-v0yoxx"
+    className="css-11hdqe0-MarkerUnit"
+    onClick={[Function]}
   >
     <span
-      className="css-2faz1g"
+      className="css-twv3ha-MarkerUnit"
     >
       1
     </span>
   </div>
   <div
-    className="css-vthqyb"
+    className="css-5mf5wp-MarkerUnit"
+    onClick={[Function]}
   >
     <span
-      className="css-2faz1g"
+      className="css-twv3ha-MarkerUnit"
     >
       2
     </span>
   </div>
   <div
-    className="css-unb8yr"
+    className="css-1yafj3t-MarkerUnit"
+    onClick={[Function]}
   >
     <span
-      className="css-2faz1g"
+      className="css-twv3ha-MarkerUnit"
     >
       3
     </span>
   </div>
   <div
-    className="css-6gwuo8"
+    className="css-1qhu3xl-MarkerUnit"
+    onClick={[Function]}
   >
     <span
-      className="css-2faz1g"
+      className="css-twv3ha-MarkerUnit"
     >
       4
     </span>
@@ -48,10 +52,11 @@ exports[`Marker should render with default props 1`] = `
   className="css-1naiqne-Marker"
 >
   <div
-    className="css-v0yoxx"
+    className="css-11hdqe0-MarkerUnit"
+    onClick={[Function]}
   >
     <span
-      className="css-2faz1g"
+      className="css-twv3ha-MarkerUnit"
     >
       1
     </span>
