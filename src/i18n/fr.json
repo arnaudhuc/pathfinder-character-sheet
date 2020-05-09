@@ -1,0 +1,7 @@
+{
+	"common.home": "Accueil",
+	"common.steps": "Etape {current}/{total}",
+	"common.player.name": "Nom du joueur",
+	"common.character.name": "Nom du personnage",
+	"common.next": "Suivant"
+}

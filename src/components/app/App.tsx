@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Sheet } from '../../pages/Sheet/Sheet';
+import { Home } from '../../pages/Home/Home';
+import { Container, ThemeProvider } from '@material-ui/core';
+import Theme from '../../themes/theme';
+import { memo } from 'react';
+import { IntlProvider } from 'react-intl';
 
-function App() {
-	return (
-		<div className="App">
-			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
-				<p>
-					Edit <code>src/App.tsx</code> and save to reload.
-				</p>
-				<a
-					className="App-link"
-					href="https://reactjs.org"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Learn React
-				</a>
-			</header>
-		</div>
-	);
+interface IApp {
+	messages: any;
 }
 
-export default App;
+const App: React.FC<IApp> = (props) => {
+	const { messages } = props;
+
+	const lang = navigator.language.split(/[-_]/)[0] === 'fr' ? 'fr' : 'en';
+
+	return (
+		<IntlProvider locale={lang} messages={messages[lang]}>
+			<Router>
+				<ThemeProvider theme={Theme}>
+					<Container maxWidth="lg">
+						<Switch>
+							<Route path="/sheet">
+								<Sheet />
+							</Route>
+							<Route path="/">
+								<Home />
+							</Route>
+						</Switch>
+					</Container>
+				</ThemeProvider>
+			</Router>
+		</IntlProvider>
+	);
+};
+export default memo(App);
