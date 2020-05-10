@@ -1,4 +1,5 @@
-import React from 'react';
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/app/App';
@@ -10,9 +11,4 @@ const messages = {
 	en: messages_en,
 };
 
-ReactDOM.render(
-	<React.StrictMode>
-		<App messages={messages} />
-	</React.StrictMode>,
-	document.getElementById('root'),
-);
+ReactDOM.render(<App messages={messages} />, document.getElementById('root'));

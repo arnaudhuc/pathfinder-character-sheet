@@ -34,7 +34,7 @@ export const Home = () => {
 				{formatMessage({ id: 'common.home' })}
 			</Typography>
 
-			<Card className={classes.root}>
+			<Card className={classes.root} raised={true} elevation={24}>
 				<CardContent>
 					<Typography component="p" align="center" gutterBottom>
 						{formatMessage(
