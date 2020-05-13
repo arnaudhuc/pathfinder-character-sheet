@@ -3,7 +3,7 @@ import {
 	EnhancedStore,
 	getDefaultMiddleware,
 	Middleware,
-} from 'redux-starter-kit';
+} from '@reduxjs/toolkit';
 
 import rootReducer from './redux/reducers';
 
