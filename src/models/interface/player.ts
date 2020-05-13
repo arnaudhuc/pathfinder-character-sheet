@@ -1,3 +1,4 @@
 export interface ICharacterState {
-	name: string;
+	characterName: string;
+	playerName: string;
 }
