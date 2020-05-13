@@ -1,18 +1,18 @@
-import { createSlice } from 'redux-starter-kit';
+import { createSlice } from '@reduxjs/toolkit';
 import { playerModel } from '../../models';
 import { ICharacterState } from '../../models/interface/player';
 
 const initialState = {
-	data: {},
+	name: '',
 };
 
 export const slice = createSlice({
 	name: 'Character',
 	initialState,
 	reducers: {
-		setCharacter: (state: ICharacterState, action): void => {
+		setCharacterName: (state: ICharacterState, action): void => {
 			// eslint-disable-next-line no-param-reassign
-			state.data = playerModel(action.payload);
+			state.name = playerModel(action.payload);
 		},
 	},
 });

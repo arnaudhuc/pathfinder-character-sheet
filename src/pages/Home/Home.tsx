@@ -21,7 +21,7 @@ const useStyle = makeStyles(() =>
 );
 
 export const Home = () => {
-	const { setCharacter } = actions;
+	const { setCharacterName } = actions;
 	const dispatch = useDispatch();
 	const classes = useStyle();
 
@@ -29,7 +29,7 @@ export const Home = () => {
 
 	const handleNextButton = () => {
 		setCurrentStep(currentStep++);
-		dispatch(setCharacter({ name: 'test' }));
+		dispatch(setCharacterName({ name: 'test' }));
 	};
 
 	const { formatMessage } = useIntl();
