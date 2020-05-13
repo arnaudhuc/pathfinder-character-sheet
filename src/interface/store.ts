@@ -5,5 +5,5 @@ export interface IStore {
 }
 
 export interface ICharacter {
-	name?: string;
+	name: string;
 }

@@ -1,5 +1,8 @@
-import { reducer as playerReducer } from './playerReducer';
+import {
+	reducer as playerInfosReducer,
+	name as playerInfosName,
+} from './playerInfosSlice';
 
 export default {
-	playerReducer,
+	[playerInfosName]: playerInfosReducer,
 };
