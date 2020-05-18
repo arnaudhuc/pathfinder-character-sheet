@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1440" height="900" viewBox="0 0 1440 900" fill="none">
+   <g clip-path="url(#clip0)">
+      <rect width="1440" height="900" fill="white" />
+      <rect y="-306" width="1659" height="1244" fill="url(#pattern0)" />
+      <g filter="url(#filter0_b)">
+         <ellipse cx="416.221" cy="752.103" rx="463.463" ry="333.97" transform="rotate(23.6877 416.221 752.103)" fill="#5BF924" fill-opacity="0.1" />
+      </g>
+      <g filter="url(#filter1_b)">
+         <ellipse cx="1156.6" cy="568.827" rx="576.594" ry="379.253" transform="rotate(23.6877 1156.6 568.827)" fill="#41EBD6" fill-opacity="0.2" />
+      </g>
+      <g filter="url(#filter2_b)">
+         <ellipse cx="324.05" cy="-11" rx="388.458" ry="332.992" transform="rotate(23.6877 324.05 -11)" fill="#23BAEA" fill-opacity="0.1" />
+      </g>
+      <g filter="url(#filter3_b)">
+         <ellipse cx="969.509" cy="243" rx="388.458" ry="332.992" transform="rotate(23.6877 969.509 243)" fill="#4491A9" fill-opacity="0.1" />
+      </g>
+      <g filter="url(#filter4_b)">
+         <rect width="1440" height="900" fill="white" fill-opacity="0.4" />
+      </g>
+   </g>
+   <defs>
+      <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+         <use xlink:href="#image0" transform="translate(0 -0.000100482) scale(0.00025)" />
+      </pattern>
+      <filter id="filter0_b" x="-316.368" y="86.0736" width="1465.18" height="1332.06" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+
+         <feGaussianBlur in="BackgroundImage" stdDeviation="87" />
+
+
+      </filter>
+      <filter id="filter1_b" x="302.219" y="-184.12" width="1708.76" height="1505.9" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+
+         <feGaussianBlur in="BackgroundImage" stdDeviation="87" />
+
+
+      </filter>
+      <filter id="filter2_b" x="-339.459" y="-646" width="1327.02" height="1270" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+
+         <feGaussianBlur in="BackgroundImage" stdDeviation="87" />
+
+
+      </filter>
+      <filter id="filter3_b" x="306" y="-392" width="1327.02" height="1270" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+
+         <feGaussianBlur in="BackgroundImage" stdDeviation="87" />
+
+
+      </filter>
+      <filter id="filter4_b" x="-104" y="-104" width="1648" height="1108" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+
+         <feGaussianBlur in="BackgroundImage" stdDeviation="52" />
+
+
+      </filter>
+      <clipPath id="clip0">
+         <rect width="1440" height="900" fill="white" />
+      </clipPath>
+   </defs>
+</svg>

@@ -10,12 +10,7 @@ body {
 		sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background: rgb(203, 253, 255);
-	background: linear-gradient(
-		338deg,
-		rgba(203, 253, 255, 1) 0%,
-		rgba(231, 255, 225, 1) 100%
-	);
+	background-image: url('/images/bg.svg');
 }
 
 code {

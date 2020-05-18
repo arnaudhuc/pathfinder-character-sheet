@@ -2,7 +2,7 @@
 
 exports[`TextInput should render with default props 1`] = `
 <div
-  className="css-1e4tk0z-TextInput"
+  className="css-k008qs"
 >
   <div
     className="MuiFormControl-root MuiTextField-root"
@@ -36,12 +36,11 @@ exports[`TextInput should render with default props 1`] = `
 
 exports[`TextInput should render with no label 1`] = `
 <div
-  className="css-1e4tk0z-TextInput"
+  className="css-k008qs"
 >
   <div
     className="MuiFormControl-root MuiTextField-root"
   >
-    
     <div
       className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
       onClick={[Function]}
