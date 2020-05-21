@@ -3,5 +3,17 @@
 	"common.steps": "Etape {current}/{total}",
 	"common.player.name": "Nom du joueur",
 	"common.character.name": "Nom du personnage",
-	"common.next": "Suivant"
+	"common.next": "Suivant",
+	"ancestry.elf": "Elfe",
+	"ancestry.elf.description": "Les elfes sont grands et minces, issus d'un peuple doté d'une longue espérance de vie, et d'une importante tradition artistique et magique.",
+	"ancestry.gnome": "Gnome",
+	"ancestry.gnome.description": "Les gnomes sont petits et robustes, animés d'une insatiable curiosité et d'habitudes excentriques.",
+	"ancestry.goblin": "Gobelin",
+	"ancestry.goblin.description": "Les gobelins sont petits, énergiques et brouillons, redoutés et dénigrés depuis des millénaires.",
+	"ancestry.halfling": "Halfelin",
+	"ancestry.halfling.description": "Les halfelins sont des gens de petite taille qui s'adaptent facilement et montrent une curiosité et un humour remarquable.",
+	"ancestry.human": "Humain",
+	"ancestry.human.description": "Les humains présentent une incroyable diversité. Certains, comme les demi-elfes et les demi-orcs, ont même des ancêtres non humain.",
+	"ancestry.dwarf": "Nain",
+	"ancestry.dwarf.description": "Les nains sont petits et trapus, souvent entêtés, féroces et dévoues"
 }

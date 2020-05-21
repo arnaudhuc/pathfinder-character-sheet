@@ -10,6 +10,7 @@ import { CustomButton } from '../../components/CustomButton/CustomButton';
 import { EColor } from '../../enums/button';
 import { characterName } from '../../redux/selectors/playerSelectors';
 import { StepOne } from './StepOne';
+import { StepTwo } from './StepTwo';
 
 export const Home = () => {
 	const [currentStep, setCurrentStep] = useState(1);
@@ -29,11 +30,23 @@ export const Home = () => {
 				{formatMessage({ id: 'common.home' })}
 			</Typography>
 
-			<StepOne
-				currentStep={currentStep}
-				setCurrentStep={setCurrentStep}
-				shouldSubmit={shouldSumbit}
-			/>
+			{currentStep === 1 && (
+				<StepOne
+					currentStep={currentStep}
+					setCurrentStep={setCurrentStep}
+					shouldSubmit={shouldSumbit}
+					setSubmit={setSubmit}
+				/>
+			)}
+
+			{currentStep === 2 && (
+				<StepTwo
+					currentStep={currentStep}
+					setCurrentStep={setCurrentStep}
+					shouldSubmit={shouldSumbit}
+					setSubmit={setSubmit}
+				/>
+			)}
 
 			<div css={{ display: 'flex', justifyContent: 'center' }}>
 				<CustomButton
