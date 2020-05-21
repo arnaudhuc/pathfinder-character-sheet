@@ -13,7 +13,7 @@ interface ITile {
 	imgUrl: string;
 	title: string;
 	description: string;
-	handleClick: () => void;
+	handleClick: (id: string) => void;
 	isClicked: boolean;
 }
 
@@ -42,9 +42,13 @@ export const Tile: React.FC<ITile> = (props) => {
 
 	const cardClasses = cardUseStyles();
 
+	const handleCardClick = () => {
+		handleClick(title);
+	};
+
 	return (
 		<Card
-			onClick={handleClick}
+			onClick={handleCardClick}
 			className={classes.root}
 			variant={isClicked ? 'elevation' : 'outlined'}
 		>
@@ -64,7 +68,7 @@ export const Tile: React.FC<ITile> = (props) => {
 			<CardActionArea>
 				<CardMedia
 					className={cardClasses.root}
-					image={imgUrl}
+					image={`/images/${imgUrl}`}
 					title={description}
 				/>
 				<CardContent>

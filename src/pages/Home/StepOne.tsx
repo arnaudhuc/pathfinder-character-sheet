@@ -5,15 +5,16 @@ import {
 	makeStyles,
 	createStyles,
 	CardContent,
-	Typography,
 	FormControl,
 } from '@material-ui/core';
 import { useIntl } from 'react-intl';
-import { useRef, useEffect, Dispatch, SetStateAction } from 'react';
+import { useRef, Dispatch, SetStateAction, useLayoutEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { TextInput } from '../../components/TextInput/TextInput';
 import { actions } from '../../redux/reducers/playerInfosSlice';
+import React from 'react';
+import { Stepper } from '../../components/Stepper/Stepper';
 
 const useStyle = makeStyles(() =>
 	createStyles({
@@ -27,44 +28,45 @@ interface IStepOne {
 	currentStep: number;
 	shouldSubmit: boolean;
 	setCurrentStep: Dispatch<SetStateAction<number>>;
+	setSubmit: Dispatch<SetStateAction<boolean>>;
 }
 
 export const StepOne: React.FC<IStepOne> = (props) => {
-	const { currentStep, shouldSubmit, setCurrentStep } = props;
+	const { currentStep, shouldSubmit, setCurrentStep, setSubmit } = props;
 
 	const classes = useStyle();
 	const { formatMessage } = useIntl();
-	const inputCharaterName = useRef('');
-	const inputPlayerName = useRef('');
+	const inputCharaterName = useRef<HTMLInputElement>();
+	const inputPlayerName = useRef<HTMLInputElement>();
 	const dispatch = useDispatch();
 
 	const { setCharacterName, setPlayerName } = actions;
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		if (shouldSubmit) {
 			if (inputPlayerName && inputPlayerName.current) {
-				// @ts-ignore
 				dispatch(setPlayerName(inputPlayerName.current.value));
 			}
 			if (inputCharaterName && inputCharaterName.current) {
-				// @ts-ignore
 				dispatch(setCharacterName(inputCharaterName.current.value));
 			}
 
-			setCurrentStep(currentStep + 1);
+			setCurrentStep(2);
+			setSubmit(false);
 		}
-	}, [shouldSubmit]);
+	}, [
+		shouldSubmit,
+		dispatch,
+		setPlayerName,
+		setCharacterName,
+		setCurrentStep,
+		setSubmit,
+	]);
 
 	return (
 		<Card className={classes.root} raised={true} elevation={24}>
 			<CardContent>
-				<Typography component="p" align="center" gutterBottom>
-					{formatMessage(
-						{ id: 'common.steps' },
-						{ current: currentStep, total: 'x' },
-					)}
-				</Typography>
-
+				<Stepper currentStep={currentStep} />
 				<div
 					css={{
 						display: 'flex',
