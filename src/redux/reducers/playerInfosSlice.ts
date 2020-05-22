@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { ICharacterState } from '../../models/interface/player';
+import { IPlayerState } from '../../models/interface/player';
 
-const initialState: ICharacterState = {
+const initialState: IPlayerState = {
 	characterName: '',
 	playerName: '',
 };
@@ -10,11 +10,11 @@ const slice = createSlice({
 	name: 'playerInfos',
 	initialState,
 	reducers: {
-		setCharacterName: (state: ICharacterState, action): ICharacterState => ({
+		setCharacterName: (state: IPlayerState, action): IPlayerState => ({
 			...state,
 			characterName: action.payload,
 		}),
-		setPlayerName: (state: ICharacterState, action): ICharacterState => ({
+		setPlayerName: (state: IPlayerState, action): IPlayerState => ({
 			...state,
 			playerName: action.payload,
 		}),

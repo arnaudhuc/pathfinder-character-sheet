@@ -1,7 +1,7 @@
-import { ICharacterState } from '../models/interface/player';
+import { IPlayerState } from '../models/interface/player';
 
 export interface IStore {
-	characterReducer: ICharacterState;
+	characterReducer: IPlayerState;
 }
 
 export interface ICharacter {

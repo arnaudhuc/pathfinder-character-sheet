@@ -1,4 +1,4 @@
-export interface ICharacterState {
+export interface IPlayerState {
 	characterName: string;
 	playerName: string;
 }
