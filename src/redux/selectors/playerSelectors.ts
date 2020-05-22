@@ -1,9 +1,9 @@
 import { createSelector } from 'reselect';
 import { get } from 'lodash';
-import { ICharacterState } from '../../models/interface/player';
+import { IPlayerState } from '../../models/interface/player';
 
 interface iStore {
-	playerInfos: ICharacterState;
+	playerInfos: IPlayerState;
 }
 
 export const playerReducerSelector = (state: iStore) => state.playerInfos;
