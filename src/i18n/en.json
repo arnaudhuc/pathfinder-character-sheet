@@ -4,6 +4,7 @@
 	"common.player.name": "Player name",
 	"common.character.name": "Character name",
 	"common.next": "Next",
+	"common.error.empty": "The field must be filled",
 	"ancestry.elf": "Elf",
 	"ancestry.elf.description": "Elves are a tall, slender, long-lived people with a strong tradition of art and magic.",
 	"ancestry.elf.ability.boost": "Dexterity, Intelligence, free",
