@@ -30,6 +30,7 @@ exports[`TextInput should render with default props 1`] = `
         type="text"
       />
     </div>
+    
   </div>
 </div>
 `;
@@ -58,6 +59,7 @@ exports[`TextInput should render with no label 1`] = `
         type="text"
       />
     </div>
+    
   </div>
 </div>
 `;
