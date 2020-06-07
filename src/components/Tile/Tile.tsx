@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -8,22 +9,20 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { green } from '@material-ui/core/colors';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import { IAncestries } from '../../models/interface/ancestries';
 
 interface ITile {
-	imgUrl: string;
-	title: string;
-	description: string;
-	handleClick: (id: string) => void;
-	isClicked: boolean;
+	handleClick: (id: number) => void;
+	ancestry: IAncestries;
 }
 
 export const Tile: React.FC<ITile> = (props) => {
-	const { imgUrl, title, description, handleClick, isClicked } = props;
+	const { ancestry, handleClick } = props;
 
 	const useStyles = makeStyles({
 		root: {
 			maxWidth: 240,
-			border: isClicked
+			border: ancestry.isClicked
 				? `2px solid ${green.A200}`
 				: '1px solid rgba(0, 0, 0, 0.12)',
 			position: 'relative',
@@ -35,7 +34,7 @@ export const Tile: React.FC<ITile> = (props) => {
 
 	const cardUseStyles = makeStyles({
 		root: {
-			height: isClicked ? 270 : 250,
+			height: ancestry.isClicked ? 270 : 250,
 			backgroundPosition: 'center',
 		},
 	});
@@ -43,16 +42,16 @@ export const Tile: React.FC<ITile> = (props) => {
 	const cardClasses = cardUseStyles();
 
 	const handleCardClick = () => {
-		handleClick(title);
+		handleClick(ancestry.id);
 	};
 
 	return (
 		<Card
 			onClick={handleCardClick}
 			className={classes.root}
-			variant={isClicked ? 'elevation' : 'outlined'}
+			variant={ancestry.isClicked ? 'elevation' : 'outlined'}
 		>
-			{isClicked && (
+			{ancestry.isClicked && (
 				<CheckCircleIcon
 					style={{
 						color: green.A200,
@@ -68,15 +67,15 @@ export const Tile: React.FC<ITile> = (props) => {
 			<CardActionArea>
 				<CardMedia
 					className={cardClasses.root}
-					image={`/images/${imgUrl}`}
-					title={description}
+					image={`/images/${ancestry.imageUrl}`}
+					title={ancestry.name}
 				/>
 				<CardContent>
 					<Typography gutterBottom variant="h5" component="h2" align="center">
-						{title}
+						{ancestry.name}
 					</Typography>
 					<Typography variant="body2" color="textSecondary" component="p">
-						{description}
+						{ancestry.name}
 					</Typography>
 				</CardContent>
 			</CardActionArea>
