@@ -37,6 +37,7 @@
 			{
 				"allow": ["warn", "error"]
 			}
-		]
+		],
+		"react/prop-types": "never"
 	}
 }

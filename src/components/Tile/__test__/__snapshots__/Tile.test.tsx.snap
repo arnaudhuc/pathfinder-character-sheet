@@ -47,10 +47,10 @@ exports[`Tile should render when the Tile is clicked 1`] = `
       className="MuiCardMedia-root makeStyles-root-4"
       style={
         Object {
-          "backgroundImage": "url(\\"/images/https://s1.qwant.com/thumbr/0x380/0/7/1facf8942b993307b279a5bde7cd835bc9596708014bacee90d0a7639ac13e/a9a41b339e1de3975c4f5227ae28e939.png?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Fa9%2Fa4%2F1b%2Fa9a41b339e1de3975c4f5227ae28e939.png\\")",
+          "backgroundImage": "url(\\"/images/elf.jpg\\")",
         }
       }
-      title="Le roublard est un maître des activités douteuses qui frappe quand ses ennemies s'y attendent le moins."
+      title="elf"
     />
     <div
       className="MuiCardContent-root"
@@ -58,12 +58,12 @@ exports[`Tile should render when the Tile is clicked 1`] = `
       <h2
         className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom MuiTypography-alignCenter"
       >
-        Roublard
+        elf
       </h2>
       <p
         className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary"
       >
-        Le roublard est un maître des activités douteuses qui frappe quand ses ennemies s'y attendent le moins.
+        elf
       </p>
     </div>
     <span
@@ -102,10 +102,10 @@ exports[`Tile should render with default props 1`] = `
       className="MuiCardMedia-root makeStyles-root-2"
       style={
         Object {
-          "backgroundImage": "url(\\"/images/https://s1.qwant.com/thumbr/0x380/0/7/1facf8942b993307b279a5bde7cd835bc9596708014bacee90d0a7639ac13e/a9a41b339e1de3975c4f5227ae28e939.png?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Fa9%2Fa4%2F1b%2Fa9a41b339e1de3975c4f5227ae28e939.png\\")",
+          "backgroundImage": "url(\\"/images/elf.jpg\\")",
         }
       }
-      title="Le roublard est un maître des activités douteuses qui frappe quand ses ennemies s'y attendent le moins."
+      title="elf"
     />
     <div
       className="MuiCardContent-root"
@@ -113,12 +113,12 @@ exports[`Tile should render with default props 1`] = `
       <h2
         className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom MuiTypography-alignCenter"
       >
-        Roublard
+        elf
       </h2>
       <p
         className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary"
       >
-        Le roublard est un maître des activités douteuses qui frappe quand ses ennemies s'y attendent le moins.
+        elf
       </p>
     </div>
     <span
