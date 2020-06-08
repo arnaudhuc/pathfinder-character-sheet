@@ -1,3 +1,5 @@
+import { EAbility } from '../enum/ability';
+
 export interface ICharacterState {
 	ancestry: string;
 	strengthScore: number;
@@ -6,4 +8,6 @@ export interface ICharacterState {
 	intelligenceScore: number;
 	wisdomScore: number;
 	charismaScore: number;
+	abilityBoost: Array<EAbility>;
+	abilityFlow: Array<EAbility>;
 }

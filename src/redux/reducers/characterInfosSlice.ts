@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { ICharacterState } from '../../models/interface/character';
+import { EAbility } from '../../models/enum/ability';
 
 const initialState: ICharacterState = {
 	ancestry: '',
@@ -9,6 +10,8 @@ const initialState: ICharacterState = {
 	intelligenceScore: 10,
 	wisdomScore: 10,
 	charismaScore: 10,
+	abilityBoost: [EAbility.NUL],
+	abilityFlow: [EAbility.NUL],
 };
 
 const slice = createSlice({
@@ -48,6 +51,14 @@ const slice = createSlice({
 		setCharismaScore: (state: ICharacterState, action): ICharacterState => ({
 			...state,
 			charismaScore: action.payload,
+		}),
+		setAbilityBoost: (state: ICharacterState, action): ICharacterState => ({
+			...state,
+			abilityBoost: action.payload,
+		}),
+		setAbilityFlow: (state: ICharacterState, action): ICharacterState => ({
+			...state,
+			abilityFlow: action.payload,
 		}),
 	},
 });
