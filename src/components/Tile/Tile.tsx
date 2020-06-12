@@ -69,6 +69,9 @@ export const Tile: React.FC<ITile> = (props) => {
 					className={cardClasses.root}
 					image={`/images/${ancestry.imageUrl}`}
 					title={ancestry.name}
+					css={{
+						backgroundPosition: 'top',
+					}}
 				/>
 				<CardContent>
 					<Typography gutterBottom variant="h5" component="h2" align="center">

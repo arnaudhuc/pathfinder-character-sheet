@@ -11,11 +11,11 @@ const initialState: ICharacterState = {
 	wisdomScore: 10,
 	charismaScore: 10,
 	abilityBoost: [EAbility.NUL],
-	abilityFlow: [EAbility.NUL],
+	abilityFlaw: [EAbility.NUL],
 };
 
 const slice = createSlice({
-	name: 'playerInfos',
+	name: 'characterInfos',
 	initialState,
 	reducers: {
 		setAncestry: (state: ICharacterState, action): ICharacterState => ({
@@ -56,9 +56,9 @@ const slice = createSlice({
 			...state,
 			abilityBoost: action.payload,
 		}),
-		setAbilityFlow: (state: ICharacterState, action): ICharacterState => ({
+		setAbilityFlaw: (state: ICharacterState, action): ICharacterState => ({
 			...state,
-			abilityFlow: action.payload,
+			abilityFlaw: action.payload,
 		}),
 	},
 });

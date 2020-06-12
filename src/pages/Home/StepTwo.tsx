@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { Stepper } from '../../components/Stepper/Stepper';
 import CardContent from '@material-ui/core/CardContent';
 import { makeStyles, createStyles, Card } from '@material-ui/core';
-import ancestries from './Ancestries.json';
+import { actions } from '../../redux/reducers/characterInfosSlice';
 import { Tile } from '../../components/Tile/Tile';
 import { IAncestries } from '../../models/interface/ancestries';
 import { EAbility } from '../../models/enum/ability';
@@ -31,6 +31,7 @@ export const StepTwo: React.FC<StepTwo> = (props) => {
 
 	const classes = useStyle();
 	const dispatch = useDispatch();
+	const { setAncestry, setAbilityFlaw, setAbilityBoost } = actions;
 	const [ancestries, setAncestries] = useState<Array<IAncestries>>([
 		{
 			id: 1,
@@ -88,11 +89,15 @@ export const StepTwo: React.FC<StepTwo> = (props) => {
 		speed: 500,
 		slidesToShow: 4,
 		slidesToScroll: 1,
+		draggable: true,
+		swipeToSlide: true,
+		swipe: true,
 	};
 
 	useEffect(() => {}, [shouldSubmit, dispatch, setCurrentStep, setSubmit]);
 
 	const handleTileClick = (id: number) => {
+		const selectedAncestry = ancestries.find((ancestry) => ancestry.id === id);
 		const newAncestries = ancestries.map((ancestry) => {
 			if (ancestry.id === id) {
 				ancestry = {
@@ -109,6 +114,9 @@ export const StepTwo: React.FC<StepTwo> = (props) => {
 			return ancestry;
 		});
 
+		dispatch(setAncestry(selectedAncestry?.name));
+		dispatch(setAbilityFlaw(selectedAncestry?.abilityFlaw));
+		dispatch(setAbilityBoost(selectedAncestry?.abilityBoost));
 		setAncestries(newAncestries);
 	};
 

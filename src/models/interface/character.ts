@@ -9,5 +9,5 @@ export interface ICharacterState {
 	wisdomScore: number;
 	charismaScore: number;
 	abilityBoost: Array<EAbility>;
-	abilityFlow: Array<EAbility>;
+	abilityFlaw: Array<EAbility>;
 }
