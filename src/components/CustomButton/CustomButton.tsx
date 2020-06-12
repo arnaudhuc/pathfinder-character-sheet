@@ -12,7 +12,7 @@ interface IButton {
 export const CustomButton: React.FC<IButton> = (props) => {
 	const { value, handleClick, type = EColor.DEFAULT } = props;
 	return (
-		<div>
+		<div {...props}>
 			<Button onClick={handleClick} variant="contained" color={type}>
 				{value}
 			</Button>

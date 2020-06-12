@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
+import { useIntl } from 'react-intl';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -9,6 +10,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { green } from '@material-ui/core/colors';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import { Divider } from '@material-ui/core';
+
 import { IAncestries } from '../../models/interface/ancestries';
 
 interface ITile {
@@ -18,6 +21,7 @@ interface ITile {
 
 export const Tile: React.FC<ITile> = (props) => {
 	const { ancestry, handleClick } = props;
+	const { formatMessage } = useIntl();
 
 	const useStyles = makeStyles({
 		root: {
@@ -50,6 +54,9 @@ export const Tile: React.FC<ITile> = (props) => {
 			onClick={handleCardClick}
 			className={classes.root}
 			variant={ancestry.isClicked ? 'elevation' : 'outlined'}
+			css={{
+				height: '450px',
+			}}
 		>
 			{ancestry.isClicked && (
 				<CheckCircleIcon
@@ -75,11 +82,12 @@ export const Tile: React.FC<ITile> = (props) => {
 				/>
 				<CardContent>
 					<Typography gutterBottom variant="h5" component="h2" align="center">
-						{ancestry.name}
+						{formatMessage({ id: `ancestry.${ancestry.name}` })}
 					</Typography>
 					<Typography variant="body2" color="textSecondary" component="p">
-						{ancestry.name}
+						{formatMessage({ id: `ancestry.${ancestry.name}.description` })}
 					</Typography>
+					<Divider variant="fullWidth" />
 				</CardContent>
 			</CardActionArea>
 		</Card>

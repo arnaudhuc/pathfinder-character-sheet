@@ -22,6 +22,10 @@ export const Home = () => {
 		setSubmit(true);
 	};
 
+	const handleBackButton = () => {
+		setCurrentStep(currentStep - 1);
+	};
+
 	const { formatMessage } = useIntl();
 
 	return (
@@ -49,6 +53,16 @@ export const Home = () => {
 			)}
 
 			<div css={{ display: 'flex', justifyContent: 'center' }}>
+				{currentStep !== 1 && (
+					<CustomButton
+						handleClick={handleBackButton}
+						value={formatMessage({ id: 'common.previous' })}
+						type={EColor.SECONDARY}
+						css={{
+							marginRight: '20px',
+						}}
+					/>
+				)}
 				<CustomButton
 					handleClick={handleNextButton}
 					value={formatMessage({ id: 'common.next' })}

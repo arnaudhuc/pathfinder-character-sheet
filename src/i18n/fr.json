@@ -4,6 +4,7 @@
 	"common.player.name": "Nom du joueur",
 	"common.character.name": "Nom du personnage",
 	"common.next": "Suivant",
+	"common.previous": "Précédent",
 	"common.error.empty": "Le champs doit être rempli",
 	"ancestry.error": "Veuillez sélectionner une race s'il vous plait",
 	"ancestry.elf": "Elfe",

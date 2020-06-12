@@ -92,7 +92,7 @@ export const StepTwo: React.FC<StepTwo> = (props) => {
 	const [isError, setIsError] = useState(false);
 	const sliderSettings = {
 		dots: true,
-		infinite: true,
+		infinite: false,
 		speed: 500,
 		slidesToShow: 4,
 		slidesToScroll: 1,
