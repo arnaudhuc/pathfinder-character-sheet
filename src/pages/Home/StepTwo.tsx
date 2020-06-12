@@ -1,15 +1,21 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import Slider from 'react-slick';
-import { useEffect, Dispatch, SetStateAction, useState } from 'react';
+import {
+	useEffect as useLayoutEffect,
+	Dispatch,
+	SetStateAction,
+	useState,
+} from 'react';
 import { useDispatch } from 'react-redux';
 import { Stepper } from '../../components/Stepper/Stepper';
 import CardContent from '@material-ui/core/CardContent';
-import { makeStyles, createStyles, Card } from '@material-ui/core';
+import { makeStyles, createStyles, Card, Typography } from '@material-ui/core';
 import { actions } from '../../redux/reducers/characterInfosSlice';
 import { Tile } from '../../components/Tile/Tile';
 import { IAncestries } from '../../models/interface/ancestries';
 import { EAbility } from '../../models/enum/ability';
+import { useIntl } from 'react-intl';
 
 interface StepTwo {
 	currentStep: number;
@@ -83,6 +89,7 @@ export const StepTwo: React.FC<StepTwo> = (props) => {
 		},
 	]);
 
+	const [isError, setIsError] = useState(false);
 	const sliderSettings = {
 		dots: true,
 		infinite: true,
@@ -94,7 +101,23 @@ export const StepTwo: React.FC<StepTwo> = (props) => {
 		swipe: true,
 	};
 
-	useEffect(() => {}, [shouldSubmit, dispatch, setCurrentStep, setSubmit]);
+	useLayoutEffect(() => {
+		if (shouldSubmit) {
+			const clickedAncestry = ancestries.find(
+				(ancestry) => ancestry.isClicked === true,
+			);
+
+			if (!clickedAncestry) {
+				setIsError(true);
+				return setSubmit(false);
+			}
+
+			setCurrentStep(currentStep + 1);
+			return setSubmit(false);
+		}
+	}, [shouldSubmit, dispatch, setCurrentStep, setSubmit]);
+
+	const { formatMessage } = useIntl();
 
 	const handleTileClick = (id: number) => {
 		const selectedAncestry = ancestries.find((ancestry) => ancestry.id === id);
@@ -125,6 +148,12 @@ export const StepTwo: React.FC<StepTwo> = (props) => {
 			<Card className={classes.root} raised={true} elevation={24}>
 				<CardContent>
 					<Stepper currentStep={currentStep} />
+
+					{isError && (
+						<Typography align="center" color="error">
+							{formatMessage({ id: 'ancestry.error' })}
+						</Typography>
+					)}
 					<div>
 						<Slider {...sliderSettings}>
 							{ancestries.map((ancestry) => (

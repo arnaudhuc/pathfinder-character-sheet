@@ -75,7 +75,7 @@ export const StepOne: React.FC<IStepOne> = (props) => {
 				return setSubmit(false);
 			}
 
-			setCurrentStep(2);
+			setCurrentStep(currentStep + 1);
 			return setSubmit(false);
 		}
 	}, [
