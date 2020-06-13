@@ -55,7 +55,7 @@ export const Tile: React.FC<ITile> = (props) => {
 			className={classes.root}
 			variant={ancestry.isClicked ? 'elevation' : 'outlined'}
 			css={{
-				height: '450px',
+				height: '500px',
 			}}
 		>
 			{ancestry.isClicked && (
@@ -80,14 +80,39 @@ export const Tile: React.FC<ITile> = (props) => {
 						backgroundPosition: 'top',
 					}}
 				/>
-				<CardContent>
+				<CardContent css={{ paddingTop: '0' }}>
 					<Typography gutterBottom variant="h5" component="h2" align="center">
 						{formatMessage({ id: `ancestry.${ancestry.name}` })}
 					</Typography>
-					<Typography variant="body2" color="textSecondary" component="p">
+					<Typography
+						variant="body2"
+						color="textSecondary"
+						component="p"
+						css={{ height: '100px' }}
+					>
 						{formatMessage({ id: `ancestry.${ancestry.name}.description` })}
 					</Typography>
 					<Divider variant="fullWidth" />
+					<Typography color="secondary">
+						{formatMessage({ id: 'bonus' })} :{' '}
+						{ancestry.abilityBoost.map((anc, index) => {
+							return (
+								<Typography key={index} component="strong" color="secondary">
+									{formatMessage({ id: `common.${anc}` })}{' '}
+								</Typography>
+							);
+						})}
+					</Typography>
+					<Typography color="error">
+						{formatMessage({ id: 'malus' })} :{' '}
+						{ancestry.abilityFlaw.map((anc, index) => {
+							return (
+								<Typography key={index} component="strong" color="error">
+									{formatMessage({ id: `common.${anc}` })}{' '}
+								</Typography>
+							);
+						})}
+					</Typography>
 				</CardContent>
 			</CardActionArea>
 		</Card>

@@ -13,7 +13,7 @@ import { StepOne } from './StepOne';
 import { StepTwo } from './StepTwo';
 
 export const Home = () => {
-	const [currentStep, setCurrentStep] = useState(1);
+	const [currentStep, setCurrentStep] = useState(2);
 	const [shouldSumbit, setSubmit] = useState(false);
 
 	let characterNameSelector = useSelector(characterName);

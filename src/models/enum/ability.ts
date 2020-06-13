@@ -5,6 +5,6 @@ export enum EAbility {
 	INT = 'INT',
 	WIS = 'WIS',
 	CHA = 'CHA',
-	FRE = 'FREE',
-	NUL = '',
+	FRE = 'FRE',
+	NUL = 'NUL',
 }
