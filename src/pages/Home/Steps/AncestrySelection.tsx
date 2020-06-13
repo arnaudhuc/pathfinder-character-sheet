@@ -8,16 +8,16 @@ import {
 	useState,
 } from 'react';
 import { useDispatch } from 'react-redux';
-import { Stepper } from '../../components/Stepper/Stepper';
+import { Stepper } from '../../../components/Stepper/Stepper';
 import CardContent from '@material-ui/core/CardContent';
 import { makeStyles, createStyles, Card, Typography } from '@material-ui/core';
-import { actions } from '../../redux/reducers/characterInfosSlice';
-import { Tile } from '../../components/Tile/Tile';
-import { IAncestries } from '../../models/interface/ancestries';
-import { EAbility } from '../../models/enum/ability';
+import { actions } from '../../../redux/reducers/characterInfosSlice';
+import { Tile } from '../../../components/Tile/Tile';
+import { IAncestries } from '../../../models/interface/ancestries';
+import { EAbility } from '../../../models/enum/ability';
 import { useIntl } from 'react-intl';
 
-interface StepTwo {
+interface IAncestrySelection {
 	currentStep: number;
 	shouldSubmit: boolean;
 	setCurrentStep: Dispatch<SetStateAction<number>>;
@@ -32,7 +32,7 @@ const useStyle = makeStyles(() =>
 	}),
 );
 
-export const StepTwo: React.FC<StepTwo> = (props) => {
+export const AncestrySelection: React.FC<IAncestrySelection> = (props) => {
 	const { currentStep, shouldSubmit, setCurrentStep, setSubmit } = props;
 
 	const classes = useStyle();

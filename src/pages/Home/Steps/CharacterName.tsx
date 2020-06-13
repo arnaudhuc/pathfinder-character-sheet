@@ -17,10 +17,10 @@ import {
 } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { TextInput } from '../../components/TextInput/TextInput';
-import { actions } from '../../redux/reducers/playerInfosSlice';
+import { TextInput } from '../../../components/TextInput/TextInput';
+import { actions } from '../../../redux/reducers/playerInfosSlice';
 import React from 'react';
-import { Stepper } from '../../components/Stepper/Stepper';
+import { Stepper } from '../../../components/Stepper/Stepper';
 
 const useStyle = makeStyles(() =>
 	createStyles({
@@ -30,14 +30,14 @@ const useStyle = makeStyles(() =>
 	}),
 );
 
-interface IStepOne {
+interface ICharacterName {
 	currentStep: number;
 	shouldSubmit: boolean;
 	setCurrentStep: Dispatch<SetStateAction<number>>;
 	setSubmit: Dispatch<SetStateAction<boolean>>;
 }
 
-export const StepOne: React.FC<IStepOne> = (props) => {
+export const CharacterName: React.FC<ICharacterName> = (props) => {
 	const { currentStep, shouldSubmit, setCurrentStep, setSubmit } = props;
 
 	const classes = useStyle();

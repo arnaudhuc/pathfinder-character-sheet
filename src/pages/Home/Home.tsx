@@ -9,8 +9,9 @@ import { useSelector } from 'react-redux';
 import { CustomButton } from '../../components/CustomButton/CustomButton';
 import { EColor } from '../../enums/button';
 import { characterName } from '../../redux/selectors/playerSelectors';
-import { StepOne } from './StepOne';
-import { StepTwo } from './StepTwo';
+import { CharacterName } from './Steps/CharacterName';
+import { AncestrySelection } from './Steps/AncestrySelection';
+import { Error } from './Error';
 
 export const Home = () => {
 	const [currentStep, setCurrentStep] = useState(2);
@@ -34,23 +35,30 @@ export const Home = () => {
 				{formatMessage({ id: 'common.home' })}
 			</Typography>
 
-			{currentStep === 1 && (
-				<StepOne
-					currentStep={currentStep}
-					setCurrentStep={setCurrentStep}
-					shouldSubmit={shouldSumbit}
-					setSubmit={setSubmit}
-				/>
-			)}
-
-			{currentStep === 2 && (
-				<StepTwo
-					currentStep={currentStep}
-					setCurrentStep={setCurrentStep}
-					shouldSubmit={shouldSumbit}
-					setSubmit={setSubmit}
-				/>
-			)}
+			{(() => {
+				switch (currentStep) {
+					case 1:
+						return (
+							<CharacterName
+								currentStep={currentStep}
+								setCurrentStep={setCurrentStep}
+								shouldSubmit={shouldSumbit}
+								setSubmit={setSubmit}
+							/>
+						);
+					case 2:
+						return (
+							<AncestrySelection
+								currentStep={currentStep}
+								setCurrentStep={setCurrentStep}
+								shouldSubmit={shouldSumbit}
+								setSubmit={setSubmit}
+							/>
+						);
+					default:
+						return <Error />;
+				}
+			})()}
 
 			<div css={{ display: 'flex', justifyContent: 'center' }}>
 				{currentStep !== 1 && (
