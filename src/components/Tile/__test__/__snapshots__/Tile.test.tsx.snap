@@ -2,7 +2,7 @@
 
 exports[`Tile should render when the Tile is clicked 1`] = `
 <div
-  className="MuiPaper-root MuiCard-root makeStyles-root-3 MuiPaper-elevation1 MuiPaper-rounded"
+  className="MuiPaper-root MuiCard-root makeStyles-root-3 css-t7wcmd-Tile MuiPaper-elevation1 MuiPaper-rounded"
   onClick={[Function]}
 >
   <svg
@@ -44,7 +44,7 @@ exports[`Tile should render when the Tile is clicked 1`] = `
     type="button"
   >
     <div
-      className="MuiCardMedia-root makeStyles-root-4"
+      className="MuiCardMedia-root makeStyles-root-4 css-1pua7af-Tile"
       style={
         Object {
           "backgroundImage": "url(\\"/images/elf.jpg\\")",
@@ -53,17 +53,58 @@ exports[`Tile should render when the Tile is clicked 1`] = `
       title="elf"
     />
     <div
-      className="MuiCardContent-root"
+      className="MuiCardContent-root css-vgvxt6-Tile"
     >
       <h2
         className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom MuiTypography-alignCenter"
       >
-        elf
+        Elf
       </h2>
       <p
-        className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary"
+        className="MuiTypography-root css-10fadqj-Tile MuiTypography-body2 MuiTypography-colorTextSecondary"
       >
-        elf
+        Elves are a tall, slender, long-lived people with a strong tradition of art and magic.
+      </p>
+      <hr
+        className="MuiDivider-root"
+      />
+      <p
+        className="MuiTypography-root MuiTypography-body1 MuiTypography-colorSecondary"
+      >
+        Bonus
+         :
+         
+        <strong
+          className="MuiTypography-root MuiTypography-body1 MuiTypography-colorSecondary"
+        >
+          Dexterity
+           
+        </strong>
+        <strong
+          className="MuiTypography-root MuiTypography-body1 MuiTypography-colorSecondary"
+        >
+          Intelligence
+           
+        </strong>
+        <strong
+          className="MuiTypography-root MuiTypography-body1 MuiTypography-colorSecondary"
+        >
+          Free
+           
+        </strong>
+      </p>
+      <p
+        className="MuiTypography-root MuiTypography-body1 MuiTypography-colorError"
+      >
+        Malus
+         :
+         
+        <strong
+          className="MuiTypography-root MuiTypography-body1 MuiTypography-colorError"
+        >
+          Constitution
+           
+        </strong>
       </p>
     </div>
     <span
@@ -78,7 +119,7 @@ exports[`Tile should render when the Tile is clicked 1`] = `
 
 exports[`Tile should render with default props 1`] = `
 <div
-  className="MuiPaper-root MuiCard-root makeStyles-root-1 MuiPaper-outlined MuiPaper-rounded"
+  className="MuiPaper-root MuiCard-root makeStyles-root-1 css-t7wcmd-Tile MuiPaper-outlined MuiPaper-rounded"
   onClick={[Function]}
 >
   <button
@@ -99,7 +140,7 @@ exports[`Tile should render with default props 1`] = `
     type="button"
   >
     <div
-      className="MuiCardMedia-root makeStyles-root-2"
+      className="MuiCardMedia-root makeStyles-root-2 css-1pua7af-Tile"
       style={
         Object {
           "backgroundImage": "url(\\"/images/elf.jpg\\")",
@@ -108,17 +149,58 @@ exports[`Tile should render with default props 1`] = `
       title="elf"
     />
     <div
-      className="MuiCardContent-root"
+      className="MuiCardContent-root css-vgvxt6-Tile"
     >
       <h2
         className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom MuiTypography-alignCenter"
       >
-        elf
+        Elf
       </h2>
       <p
-        className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary"
+        className="MuiTypography-root css-10fadqj-Tile MuiTypography-body2 MuiTypography-colorTextSecondary"
       >
-        elf
+        Elves are a tall, slender, long-lived people with a strong tradition of art and magic.
+      </p>
+      <hr
+        className="MuiDivider-root"
+      />
+      <p
+        className="MuiTypography-root MuiTypography-body1 MuiTypography-colorSecondary"
+      >
+        Bonus
+         :
+         
+        <strong
+          className="MuiTypography-root MuiTypography-body1 MuiTypography-colorSecondary"
+        >
+          Dexterity
+           
+        </strong>
+        <strong
+          className="MuiTypography-root MuiTypography-body1 MuiTypography-colorSecondary"
+        >
+          Intelligence
+           
+        </strong>
+        <strong
+          className="MuiTypography-root MuiTypography-body1 MuiTypography-colorSecondary"
+        >
+          Free
+           
+        </strong>
+      </p>
+      <p
+        className="MuiTypography-root MuiTypography-body1 MuiTypography-colorError"
+      >
+        Malus
+         :
+         
+        <strong
+          className="MuiTypography-root MuiTypography-body1 MuiTypography-colorError"
+        >
+          Constitution
+           
+        </strong>
       </p>
     </div>
     <span

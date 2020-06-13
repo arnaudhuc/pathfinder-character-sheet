@@ -4,6 +4,7 @@ import renderer from 'react-test-renderer';
 import { Tile } from '../Tile';
 import { IAncestries } from '../../../models/interface/ancestries';
 import { EAbility } from '../../../models/enum/ability';
+import createComponentWithIntl from '../../../utils/createComponentWithIntl';
 
 describe('Tile', () => {
 	const ancestry: IAncestries = {
@@ -15,7 +16,7 @@ describe('Tile', () => {
 		isClicked: false,
 	};
 	test('should render with default props', () => {
-		const container = renderer.create(
+		const container = createComponentWithIntl(
 			<Tile ancestry={ancestry} handleClick={() => true} />,
 		);
 
@@ -24,7 +25,7 @@ describe('Tile', () => {
 
 	test('should render when the Tile is clicked', () => {
 		ancestry.isClicked = true;
-		const container = renderer.create(
+		const container = createComponentWithIntl(
 			<Tile ancestry={ancestry} handleClick={() => true} />,
 		);
 
