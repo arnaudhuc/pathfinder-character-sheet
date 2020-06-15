@@ -1,10 +1,10 @@
 import { EAbility } from '../enum/ability';
 
-export interface IAncestries {
+export interface ITileInfo {
 	id: number;
 	name: string;
 	imageUrl: string;
-	abilityBoost: Array<EAbility>;
-	abilityFlaw: Array<EAbility>;
+	ancestryAbilityBoost: Array<EAbility>;
+	ancestryAbilityFlaw: Array<EAbility>;
 	isClicked: boolean;
 }

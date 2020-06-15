@@ -13,9 +13,11 @@ import CardContent from '@material-ui/core/CardContent';
 import { makeStyles, createStyles, Card, Typography } from '@material-ui/core';
 import { actions } from '../../../redux/reducers/characterInfosSlice';
 import { Tile } from '../../../components/Tile/Tile';
-import { IAncestries } from '../../../models/interface/ancestries';
+import { ITileInfo } from '../../../models/interface/ancestries';
 import { EAbility } from '../../../models/enum/ability';
 import { useIntl } from 'react-intl';
+
+import { sliderSettings } from '../../../conf/slick';
 
 interface IAncestrySelection {
 	currentStep: number;
@@ -37,69 +39,63 @@ export const AncestrySelection: React.FC<IAncestrySelection> = (props) => {
 
 	const classes = useStyle();
 	const dispatch = useDispatch();
-	const { setAncestry, setAbilityFlaw, setAbilityBoost } = actions;
-	const [ancestries, setAncestries] = useState<Array<IAncestries>>([
+	const {
+		setAncestry,
+		setAncestryAbilityFlaw,
+		setAncestryAbilityBoost,
+	} = actions;
+	const [ancestries, setAncestries] = useState<Array<ITileInfo>>([
 		{
 			id: 1,
 			name: 'elf',
 			imageUrl: 'elf.jpg',
-			abilityBoost: [EAbility.DEX, EAbility.INT, EAbility.FRE],
-			abilityFlaw: [EAbility.CON],
+			ancestryAbilityBoost: [EAbility.DEX, EAbility.INT, EAbility.FRE],
+			ancestryAbilityFlaw: [EAbility.CON],
 			isClicked: false,
 		},
 		{
 			id: 2,
 			name: 'dwarf',
 			imageUrl: 'dwarf.jpg',
-			abilityBoost: [EAbility.CON, EAbility.WIS, EAbility.FRE],
-			abilityFlaw: [EAbility.CHA],
+			ancestryAbilityBoost: [EAbility.CON, EAbility.WIS, EAbility.FRE],
+			ancestryAbilityFlaw: [EAbility.CHA],
 			isClicked: false,
 		},
 		{
 			id: 3,
 			name: 'gnome',
 			imageUrl: 'gnome.png',
-			abilityBoost: [EAbility.CON, EAbility.CHA, EAbility.FRE],
-			abilityFlaw: [EAbility.STR],
+			ancestryAbilityBoost: [EAbility.CON, EAbility.CHA, EAbility.FRE],
+			ancestryAbilityFlaw: [EAbility.STR],
 			isClicked: false,
 		},
 		{
 			id: 4,
 			name: 'goblin',
 			imageUrl: 'goblin.jpg',
-			abilityBoost: [EAbility.DEX, EAbility.CHA, EAbility.FRE],
-			abilityFlaw: [EAbility.WIS],
+			ancestryAbilityBoost: [EAbility.DEX, EAbility.CHA, EAbility.FRE],
+			ancestryAbilityFlaw: [EAbility.WIS],
 			isClicked: false,
 		},
 		{
 			id: 5,
 			name: 'halfling',
 			imageUrl: 'halfling.jpg',
-			abilityBoost: [EAbility.DEX, EAbility.WIS, EAbility.FRE],
-			abilityFlaw: [EAbility.STR],
+			ancestryAbilityBoost: [EAbility.DEX, EAbility.WIS, EAbility.FRE],
+			ancestryAbilityFlaw: [EAbility.STR],
 			isClicked: false,
 		},
 		{
 			id: 6,
 			name: 'human',
 			imageUrl: 'human.jpg',
-			abilityBoost: [EAbility.FRE, EAbility.FRE],
-			abilityFlaw: [EAbility.NUL],
+			ancestryAbilityBoost: [EAbility.FRE, EAbility.FRE],
+			ancestryAbilityFlaw: [EAbility.NUL],
 			isClicked: false,
 		},
 	]);
 
 	const [isError, setIsError] = useState(false);
-	const sliderSettings = {
-		dots: true,
-		infinite: false,
-		speed: 500,
-		slidesToShow: 4,
-		slidesToScroll: 1,
-		draggable: true,
-		swipeToSlide: true,
-		swipe: true,
-	};
 
 	useLayoutEffect(() => {
 		if (shouldSubmit) {
@@ -138,8 +134,8 @@ export const AncestrySelection: React.FC<IAncestrySelection> = (props) => {
 		});
 
 		dispatch(setAncestry(selectedAncestry?.name));
-		dispatch(setAbilityFlaw(selectedAncestry?.abilityFlaw));
-		dispatch(setAbilityBoost(selectedAncestry?.abilityBoost));
+		dispatch(setAncestryAbilityFlaw(selectedAncestry?.ancestryAbilityFlaw));
+		dispatch(setAncestryAbilityBoost(selectedAncestry?.ancestryAbilityBoost));
 		setAncestries(newAncestries);
 	};
 
@@ -161,6 +157,7 @@ export const AncestrySelection: React.FC<IAncestrySelection> = (props) => {
 									ancestry={ancestry}
 									handleClick={handleTileClick}
 									key={ancestry.id}
+									tileType="ancestry"
 								/>
 							))}
 						</Slider>

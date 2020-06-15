@@ -12,15 +12,16 @@ import { green } from '@material-ui/core/colors';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import { Divider } from '@material-ui/core';
 
-import { IAncestries } from '../../models/interface/ancestries';
+import { ITileInfo } from '../../models/interface/ancestries';
 
 interface ITile {
 	handleClick: (id: number) => void;
-	ancestry: IAncestries;
+	ancestry: ITileInfo;
+	tileType: string;
 }
 
 export const Tile: React.FC<ITile> = (props) => {
-	const { ancestry, handleClick } = props;
+	const { ancestry, handleClick, tileType } = props;
 	const { formatMessage } = useIntl();
 
 	const useStyles = makeStyles({
@@ -82,7 +83,7 @@ export const Tile: React.FC<ITile> = (props) => {
 				/>
 				<CardContent css={{ paddingTop: '0' }}>
 					<Typography gutterBottom variant="h5" component="h2" align="center">
-						{formatMessage({ id: `ancestry.${ancestry.name}` })}
+						{formatMessage({ id: `${tileType}.${ancestry.name}` })}
 					</Typography>
 					<Typography
 						variant="body2"
@@ -90,12 +91,12 @@ export const Tile: React.FC<ITile> = (props) => {
 						component="p"
 						css={{ height: '100px' }}
 					>
-						{formatMessage({ id: `ancestry.${ancestry.name}.description` })}
+						{formatMessage({ id: `${tileType}.${ancestry.name}.description` })}
 					</Typography>
 					<Divider variant="fullWidth" />
 					<Typography color="secondary">
 						{formatMessage({ id: 'bonus' })} :{' '}
-						{ancestry.abilityBoost.map((anc, index) => {
+						{ancestry.ancestryAbilityBoost.map((anc, index) => {
 							return (
 								<Typography key={index} component="strong" color="secondary">
 									{formatMessage({ id: `common.${anc}` })}{' '}
@@ -105,7 +106,7 @@ export const Tile: React.FC<ITile> = (props) => {
 					</Typography>
 					<Typography color="error">
 						{formatMessage({ id: 'malus' })} :{' '}
-						{ancestry.abilityFlaw.map((anc, index) => {
+						{ancestry.ancestryAbilityFlaw.map((anc, index) => {
 							return (
 								<Typography key={index} component="strong" color="error">
 									{formatMessage({ id: `common.${anc}` })}{' '}

@@ -12,9 +12,10 @@ import { characterName } from '../../redux/selectors/playerSelectors';
 import { CharacterName } from './Steps/CharacterName';
 import { AncestrySelection } from './Steps/AncestrySelection';
 import { Error } from './Error';
+import { ClassSelection } from './Steps/ClassSelection';
 
 export const Home = () => {
-	const [currentStep, setCurrentStep] = useState(2);
+	const [currentStep, setCurrentStep] = useState(3);
 	const [shouldSumbit, setSubmit] = useState(false);
 
 	let characterNameSelector = useSelector(characterName);
@@ -49,6 +50,15 @@ export const Home = () => {
 					case 2:
 						return (
 							<AncestrySelection
+								currentStep={currentStep}
+								setCurrentStep={setCurrentStep}
+								shouldSubmit={shouldSumbit}
+								setSubmit={setSubmit}
+							/>
+						);
+					case 3:
+						return (
+							<ClassSelection
 								currentStep={currentStep}
 								setCurrentStep={setCurrentStep}
 								shouldSubmit={shouldSumbit}
