@@ -1,17 +1,11 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { useState, useLayoutEffect, Dispatch, SetStateAction } from 'react';
-import {
-	Card,
-	Slider,
-	makeStyles,
-	createStyles,
-	Typography,
-} from '@material-ui/core';
+import { Card, makeStyles, createStyles, Typography } from '@material-ui/core';
+import Slider from 'react-slick';
 import CardContent from '@material-ui/core/CardContent';
 
 import { Stepper } from '../../../components/Stepper/Stepper';
-import { sliderSettings } from '../../../conf/slick';
 import { ITileInfo } from '../../../models/interface/ancestries';
 import { EAbility } from '../../../models/enum/ability';
 import { useDispatch } from 'react-redux';
@@ -40,53 +34,101 @@ export const ClassSelection: React.FC<IClassSelection> = (props) => {
 	const classes = useStyle();
 	const dispatch = useDispatch();
 	const { setAncestry, setAbilityFlaw, setAbilityBoost } = actions;
-	const [ancestries, setAncestries] = useState<Array<ITileInfo>>([
+	const [characterClass, setCharacterClass] = useState<Array<ITileInfo>>([
 		{
 			id: 1,
-			name: 'elf',
-			imageUrl: 'elf.jpg',
-			abilityBoost: [EAbility.DEX, EAbility.INT, EAbility.FRE],
-			abilityFlaw: [EAbility.CON],
+			name: 'alchemist',
+			imageUrl: 'alchemist.png',
+			abilityBoost: [EAbility.INT],
+			abilityFlaw: [EAbility.CON, EAbility.DEX],
 			isClicked: false,
 		},
 		{
 			id: 2,
-			name: 'dwarf',
-			imageUrl: 'dwarf.jpg',
-			abilityBoost: [EAbility.CON, EAbility.WIS, EAbility.FRE],
-			abilityFlaw: [EAbility.CHA],
+			name: 'barbarian',
+			imageUrl: 'barbarian.jpg',
+			abilityBoost: [EAbility.STR],
+			abilityFlaw: [EAbility.CON, EAbility.DEX],
 			isClicked: false,
 		},
 		{
 			id: 3,
-			name: 'gnome',
-			imageUrl: 'gnome.png',
-			abilityBoost: [EAbility.CON, EAbility.CHA, EAbility.FRE],
-			abilityFlaw: [EAbility.STR],
+			name: 'bard',
+			imageUrl: 'bard.jpg',
+			abilityBoost: [EAbility.CHA],
+			abilityFlaw: [EAbility.CON, EAbility.DEX],
 			isClicked: false,
 		},
 		{
 			id: 4,
-			name: 'goblin',
-			imageUrl: 'goblin.jpg',
-			abilityBoost: [EAbility.DEX, EAbility.CHA, EAbility.FRE],
-			abilityFlaw: [EAbility.WIS],
+			name: 'champion',
+			imageUrl: 'champion.jpg',
+			abilityBoost: [EAbility.STR],
+			abilityFlaw: [EAbility.CHA, EAbility.CON],
 			isClicked: false,
 		},
 		{
 			id: 5,
-			name: 'halfling',
-			imageUrl: 'halfling.jpg',
-			abilityBoost: [EAbility.DEX, EAbility.WIS, EAbility.FRE],
-			abilityFlaw: [EAbility.STR],
+			name: 'cleric',
+			imageUrl: 'cleric.jpg',
+			abilityBoost: [EAbility.WIS],
+			abilityFlaw: [EAbility.CHA, EAbility.CON],
 			isClicked: false,
 		},
 		{
 			id: 6,
-			name: 'human',
-			imageUrl: 'human.jpg',
-			abilityBoost: [EAbility.FRE, EAbility.FRE],
-			abilityFlaw: [EAbility.NUL],
+			name: 'druid',
+			imageUrl: 'druid.jpg',
+			abilityBoost: [EAbility.WIS],
+			abilityFlaw: [EAbility.CON, EAbility.DEX],
+			isClicked: false,
+		},
+		{
+			id: 7,
+			name: 'fighter',
+			imageUrl: 'fighter.jpg',
+			abilityBoost: [EAbility.DEX, EAbility.STR],
+			abilityFlaw: [EAbility.CON],
+			isClicked: false,
+		},
+		{
+			id: 8,
+			name: 'monk',
+			imageUrl: 'monk.jpg',
+			abilityBoost: [EAbility.DEX, EAbility.STR],
+			abilityFlaw: [EAbility.CON, EAbility.WIS],
+			isClicked: false,
+		},
+		{
+			id: 9,
+			name: 'ranger',
+			imageUrl: 'ranger.jpg',
+			abilityBoost: [EAbility.DEX, EAbility.STR],
+			abilityFlaw: [EAbility.CON, EAbility.WIS],
+			isClicked: false,
+		},
+		{
+			id: 10,
+			name: 'rogue',
+			imageUrl: 'rogue.jpg',
+			abilityBoost: [EAbility.DEX],
+			abilityFlaw: [EAbility.CON, EAbility.CHA],
+			isClicked: false,
+		},
+		{
+			id: 11,
+			name: 'sorcerer',
+			imageUrl: 'sorcerer.jpg',
+			abilityBoost: [EAbility.CHA],
+			abilityFlaw: [EAbility.CON, EAbility.DEX],
+			isClicked: false,
+		},
+		{
+			id: 12,
+			name: 'wizard',
+			imageUrl: 'wizard.png',
+			abilityBoost: [EAbility.INT],
+			abilityFlaw: [EAbility.CON, EAbility.DEX],
 			isClicked: false,
 		},
 	]);
@@ -95,7 +137,7 @@ export const ClassSelection: React.FC<IClassSelection> = (props) => {
 
 	useLayoutEffect(() => {
 		if (shouldSubmit) {
-			const clickedAncestry = ancestries.find(
+			const clickedAncestry = characterClass.find(
 				(ancestry) => ancestry.isClicked === true,
 			);
 
@@ -112,8 +154,10 @@ export const ClassSelection: React.FC<IClassSelection> = (props) => {
 	const { formatMessage } = useIntl();
 
 	const handleTileClick = (id: number) => {
-		const selectedAncestry = ancestries.find((ancestry) => ancestry.id === id);
-		const newAncestries = ancestries.map((ancestry) => {
+		const selectedAncestry = characterClass.find(
+			(ancestry) => ancestry.id === id,
+		);
+		const newAncestries = characterClass.map((ancestry) => {
 			if (ancestry.id === id) {
 				ancestry = {
 					...ancestry,
@@ -132,7 +176,18 @@ export const ClassSelection: React.FC<IClassSelection> = (props) => {
 		dispatch(setAncestry(selectedAncestry?.name));
 		dispatch(setAbilityFlaw(selectedAncestry?.abilityFlaw));
 		dispatch(setAbilityBoost(selectedAncestry?.abilityBoost));
-		setAncestries(newAncestries);
+		setCharacterClass(newAncestries);
+	};
+
+	const sliderSettings = {
+		dots: true,
+		infinite: false,
+		speed: 500,
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		draggable: true,
+		swipeToSlide: true,
+		swipe: true,
 	};
 
 	return (
@@ -147,8 +202,9 @@ export const ClassSelection: React.FC<IClassSelection> = (props) => {
 						</Typography>
 					)}
 					<div>
+						sete aze azeao
 						<Slider {...sliderSettings}>
-							{ancestries.map((ancestry) => (
+							{characterClass.map((ancestry) => (
 								<Tile
 									ancestry={ancestry}
 									handleClick={handleTileClick}
