@@ -202,13 +202,13 @@ export const ClassSelection: React.FC<IClassSelection> = (props) => {
 						</Typography>
 					)}
 					<div>
-						sete aze azeao
 						<Slider {...sliderSettings}>
 							{characterClass.map((ancestry) => (
 								<Tile
 									ancestry={ancestry}
 									handleClick={handleTileClick}
 									key={ancestry.id}
+									tileType="class"
 								/>
 							))}
 						</Slider>

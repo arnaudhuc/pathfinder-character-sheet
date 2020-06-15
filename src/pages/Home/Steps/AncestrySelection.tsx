@@ -153,6 +153,7 @@ export const AncestrySelection: React.FC<IAncestrySelection> = (props) => {
 									ancestry={ancestry}
 									handleClick={handleTileClick}
 									key={ancestry.id}
+									tileType="ancestry"
 								/>
 							))}
 						</Slider>

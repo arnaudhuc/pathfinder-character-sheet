@@ -15,7 +15,9 @@ storiesOf('Tiles', module)
 			abilityFlaw: [EAbility.CON],
 			isClicked: false,
 		};
-		return <Tile ancestry={ancestry} handleClick={() => true} />;
+		return (
+			<Tile ancestry={ancestry} handleClick={() => true} tileType="ancestry" />
+		);
 	})
 	.add('Clicked', () => {
 		const ancestry: ITileInfo = {
@@ -26,5 +28,7 @@ storiesOf('Tiles', module)
 			abilityFlaw: [EAbility.CON],
 			isClicked: true,
 		};
-		return <Tile ancestry={ancestry} handleClick={() => true} />;
+		return (
+			<Tile ancestry={ancestry} handleClick={() => true} tileType="ancestry" />
+		);
 	});

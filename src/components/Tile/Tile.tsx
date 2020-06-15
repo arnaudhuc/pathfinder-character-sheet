@@ -17,10 +17,11 @@ import { ITileInfo } from '../../models/interface/ancestries';
 interface ITile {
 	handleClick: (id: number) => void;
 	ancestry: ITileInfo;
+	tileType: string;
 }
 
 export const Tile: React.FC<ITile> = (props) => {
-	const { ancestry, handleClick } = props;
+	const { ancestry, handleClick, tileType } = props;
 	const { formatMessage } = useIntl();
 
 	const useStyles = makeStyles({
@@ -82,7 +83,7 @@ export const Tile: React.FC<ITile> = (props) => {
 				/>
 				<CardContent css={{ paddingTop: '0' }}>
 					<Typography gutterBottom variant="h5" component="h2" align="center">
-						{formatMessage({ id: `ancestry.${ancestry.name}` })}
+						{formatMessage({ id: `${tileType}.${ancestry.name}` })}
 					</Typography>
 					<Typography
 						variant="body2"
@@ -90,7 +91,7 @@ export const Tile: React.FC<ITile> = (props) => {
 						component="p"
 						css={{ height: '100px' }}
 					>
-						{formatMessage({ id: `ancestry.${ancestry.name}.description` })}
+						{formatMessage({ id: `${tileType}.${ancestry.name}.description` })}
 					</Typography>
 					<Divider variant="fullWidth" />
 					<Typography color="secondary">

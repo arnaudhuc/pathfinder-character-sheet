@@ -2,12 +2,12 @@
 import { jsx } from '@emotion/core';
 import renderer from 'react-test-renderer';
 import { Tile } from '../Tile';
-import { IAncestries } from '../../../models/interface/ancestries';
+import { ITileInfo } from '../../../models/interface/ancestries';
 import { EAbility } from '../../../models/enum/ability';
 import createComponentWithIntl from '../../../utils/createComponentWithIntl';
 
 describe('Tile', () => {
-	const ancestry: IAncestries = {
+	const ancestry: ITileInfo = {
 		id: 1,
 		name: 'elf',
 		imageUrl: 'elf.jpg',
@@ -17,7 +17,7 @@ describe('Tile', () => {
 	};
 	test('should render with default props', () => {
 		const container = createComponentWithIntl(
-			<Tile ancestry={ancestry} handleClick={() => true} />,
+			<Tile ancestry={ancestry} handleClick={() => true} tileType="ancestry" />,
 		);
 
 		expect(container).toMatchSnapshot();
@@ -26,7 +26,7 @@ describe('Tile', () => {
 	test('should render when the Tile is clicked', () => {
 		ancestry.isClicked = true;
 		const container = createComponentWithIntl(
-			<Tile ancestry={ancestry} handleClick={() => true} />,
+			<Tile ancestry={ancestry} handleClick={() => true} tileType="ancestry" />,
 		);
 
 		expect(container).toMatchSnapshot();
