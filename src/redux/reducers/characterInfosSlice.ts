@@ -4,14 +4,17 @@ import { EAbility } from '../../models/enum/ability';
 
 const initialState: ICharacterState = {
 	ancestry: '',
+	class: '',
 	strengthScore: 10,
 	dexterityScore: 10,
 	constitutionScore: 10,
 	intelligenceScore: 10,
 	wisdomScore: 10,
 	charismaScore: 10,
-	abilityBoost: [EAbility.NUL],
-	abilityFlaw: [EAbility.NUL],
+	ancestryAbilityBoost: [EAbility.NUL],
+	ancestryAbilityFlaw: [EAbility.NUL],
+	classAbilityBoost: [EAbility.NUL],
+	classAbilityFlaw: [EAbility.NUL],
 };
 
 const slice = createSlice({
@@ -52,13 +55,34 @@ const slice = createSlice({
 			...state,
 			charismaScore: action.payload,
 		}),
-		setAbilityBoost: (state: ICharacterState, action): ICharacterState => ({
+		setAncestryAbilityBoost: (
+			state: ICharacterState,
+			action,
+		): ICharacterState => ({
 			...state,
-			abilityBoost: action.payload,
+			ancestryAbilityBoost: action.payload,
 		}),
-		setAbilityFlaw: (state: ICharacterState, action): ICharacterState => ({
+		setAncestryAbilityFlaw: (
+			state: ICharacterState,
+			action,
+		): ICharacterState => ({
 			...state,
-			abilityFlaw: action.payload,
+			ancestryAbilityFlaw: action.payload,
+		}),
+		setClass: (state: ICharacterState, action): ICharacterState => ({
+			...state,
+			class: action.payload,
+		}),
+		setClassAbilityBoost: (
+			state: ICharacterState,
+			action,
+		): ICharacterState => ({
+			...state,
+			classAbilityBoost: action.payload,
+		}),
+		setClassAbilityFlaw: (state: ICharacterState, action): ICharacterState => ({
+			...state,
+			classAbilityFlaw: action.payload,
 		}),
 	},
 });

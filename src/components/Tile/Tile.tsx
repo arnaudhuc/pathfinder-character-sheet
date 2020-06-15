@@ -96,7 +96,7 @@ export const Tile: React.FC<ITile> = (props) => {
 					<Divider variant="fullWidth" />
 					<Typography color="secondary">
 						{formatMessage({ id: 'bonus' })} :{' '}
-						{ancestry.abilityBoost.map((anc, index) => {
+						{ancestry.ancestryAbilityBoost.map((anc, index) => {
 							return (
 								<Typography key={index} component="strong" color="secondary">
 									{formatMessage({ id: `common.${anc}` })}{' '}
@@ -106,7 +106,7 @@ export const Tile: React.FC<ITile> = (props) => {
 					</Typography>
 					<Typography color="error">
 						{formatMessage({ id: 'malus' })} :{' '}
-						{ancestry.abilityFlaw.map((anc, index) => {
+						{ancestry.ancestryAbilityFlaw.map((anc, index) => {
 							return (
 								<Typography key={index} component="strong" color="error">
 									{formatMessage({ id: `common.${anc}` })}{' '}

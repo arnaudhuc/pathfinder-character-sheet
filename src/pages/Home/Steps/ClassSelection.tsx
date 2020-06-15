@@ -33,102 +33,102 @@ export const ClassSelection: React.FC<IClassSelection> = (props) => {
 
 	const classes = useStyle();
 	const dispatch = useDispatch();
-	const { setAncestry, setAbilityFlaw, setAbilityBoost } = actions;
+	const { setClass, setClassAbilityFlaw, setClassAbilityBoost } = actions;
 	const [characterClass, setCharacterClass] = useState<Array<ITileInfo>>([
 		{
 			id: 1,
 			name: 'alchemist',
 			imageUrl: 'alchemist.png',
-			abilityBoost: [EAbility.INT],
-			abilityFlaw: [EAbility.CON, EAbility.DEX],
+			ancestryAbilityBoost: [EAbility.INT],
+			ancestryAbilityFlaw: [EAbility.CON, EAbility.DEX],
 			isClicked: false,
 		},
 		{
 			id: 2,
 			name: 'barbarian',
 			imageUrl: 'barbarian.jpg',
-			abilityBoost: [EAbility.STR],
-			abilityFlaw: [EAbility.CON, EAbility.DEX],
+			ancestryAbilityBoost: [EAbility.STR],
+			ancestryAbilityFlaw: [EAbility.CON, EAbility.DEX],
 			isClicked: false,
 		},
 		{
 			id: 3,
 			name: 'bard',
 			imageUrl: 'bard.jpg',
-			abilityBoost: [EAbility.CHA],
-			abilityFlaw: [EAbility.CON, EAbility.DEX],
+			ancestryAbilityBoost: [EAbility.CHA],
+			ancestryAbilityFlaw: [EAbility.CON, EAbility.DEX],
 			isClicked: false,
 		},
 		{
 			id: 4,
 			name: 'champion',
 			imageUrl: 'champion.jpg',
-			abilityBoost: [EAbility.STR],
-			abilityFlaw: [EAbility.CHA, EAbility.CON],
+			ancestryAbilityBoost: [EAbility.STR],
+			ancestryAbilityFlaw: [EAbility.CHA, EAbility.CON],
 			isClicked: false,
 		},
 		{
 			id: 5,
 			name: 'cleric',
 			imageUrl: 'cleric.jpg',
-			abilityBoost: [EAbility.WIS],
-			abilityFlaw: [EAbility.CHA, EAbility.CON],
+			ancestryAbilityBoost: [EAbility.WIS],
+			ancestryAbilityFlaw: [EAbility.CHA, EAbility.CON],
 			isClicked: false,
 		},
 		{
 			id: 6,
 			name: 'druid',
 			imageUrl: 'druid.jpg',
-			abilityBoost: [EAbility.WIS],
-			abilityFlaw: [EAbility.CON, EAbility.DEX],
+			ancestryAbilityBoost: [EAbility.WIS],
+			ancestryAbilityFlaw: [EAbility.CON, EAbility.DEX],
 			isClicked: false,
 		},
 		{
 			id: 7,
 			name: 'fighter',
 			imageUrl: 'fighter.jpg',
-			abilityBoost: [EAbility.DEX, EAbility.STR],
-			abilityFlaw: [EAbility.CON],
+			ancestryAbilityBoost: [EAbility.DEX, EAbility.STR],
+			ancestryAbilityFlaw: [EAbility.CON],
 			isClicked: false,
 		},
 		{
 			id: 8,
 			name: 'monk',
 			imageUrl: 'monk.jpg',
-			abilityBoost: [EAbility.DEX, EAbility.STR],
-			abilityFlaw: [EAbility.CON, EAbility.WIS],
+			ancestryAbilityBoost: [EAbility.DEX, EAbility.STR],
+			ancestryAbilityFlaw: [EAbility.CON, EAbility.WIS],
 			isClicked: false,
 		},
 		{
 			id: 9,
 			name: 'ranger',
 			imageUrl: 'ranger.jpg',
-			abilityBoost: [EAbility.DEX, EAbility.STR],
-			abilityFlaw: [EAbility.CON, EAbility.WIS],
+			ancestryAbilityBoost: [EAbility.DEX, EAbility.STR],
+			ancestryAbilityFlaw: [EAbility.CON, EAbility.WIS],
 			isClicked: false,
 		},
 		{
 			id: 10,
 			name: 'rogue',
 			imageUrl: 'rogue.jpg',
-			abilityBoost: [EAbility.DEX],
-			abilityFlaw: [EAbility.CON, EAbility.CHA],
+			ancestryAbilityBoost: [EAbility.DEX],
+			ancestryAbilityFlaw: [EAbility.CON, EAbility.CHA],
 			isClicked: false,
 		},
 		{
 			id: 11,
 			name: 'sorcerer',
 			imageUrl: 'sorcerer.jpg',
-			abilityBoost: [EAbility.CHA],
-			abilityFlaw: [EAbility.CON, EAbility.DEX],
+			ancestryAbilityBoost: [EAbility.CHA],
+			ancestryAbilityFlaw: [EAbility.CON, EAbility.DEX],
 			isClicked: false,
 		},
 		{
 			id: 12,
 			name: 'wizard',
 			imageUrl: 'wizard.png',
-			abilityBoost: [EAbility.INT],
-			abilityFlaw: [EAbility.CON, EAbility.DEX],
+			ancestryAbilityBoost: [EAbility.INT],
+			ancestryAbilityFlaw: [EAbility.CON, EAbility.DEX],
 			isClicked: false,
 		},
 	]);
@@ -173,9 +173,9 @@ export const ClassSelection: React.FC<IClassSelection> = (props) => {
 			return ancestry;
 		});
 
-		dispatch(setAncestry(selectedAncestry?.name));
-		dispatch(setAbilityFlaw(selectedAncestry?.abilityFlaw));
-		dispatch(setAbilityBoost(selectedAncestry?.abilityBoost));
+		dispatch(setClass(selectedAncestry?.name));
+		dispatch(setClassAbilityFlaw(selectedAncestry?.ancestryAbilityFlaw));
+		dispatch(setClassAbilityBoost(selectedAncestry?.ancestryAbilityBoost));
 		setCharacterClass(newAncestries);
 	};
 
@@ -198,7 +198,7 @@ export const ClassSelection: React.FC<IClassSelection> = (props) => {
 
 					{isError && (
 						<Typography align="center" color="error">
-							{formatMessage({ id: 'ancestry.error' })}
+							{formatMessage({ id: 'class.error' })}
 						</Typography>
 					)}
 					<div>

@@ -29,6 +29,7 @@
 	"ancestry.human.description": "Les humains présentent une incroyable diversité. Certains, comme les demi-elfes et les demi-orcs, ont même des ancêtres non humain.",
 	"ancestry.dwarf": "Nain",
 	"ancestry.dwarf.description": "Les nains sont petits et trapus, souvent entêtés, féroces et dévoues",
+	"class.error": "Veuillez sélectionner une classe s'il vous plait.",
 	"class.alchemist": "Alchimiste",
 	"class.alchemist.description": "L'achimiste lance des bombes alchimiques et boit des décoctions de sa confection.",
 	"class.barbarian": "Barbare",

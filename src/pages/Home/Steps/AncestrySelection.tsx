@@ -39,54 +39,58 @@ export const AncestrySelection: React.FC<IAncestrySelection> = (props) => {
 
 	const classes = useStyle();
 	const dispatch = useDispatch();
-	const { setAncestry, setAbilityFlaw, setAbilityBoost } = actions;
+	const {
+		setAncestry,
+		setAncestryAbilityFlaw,
+		setAncestryAbilityBoost,
+	} = actions;
 	const [ancestries, setAncestries] = useState<Array<ITileInfo>>([
 		{
 			id: 1,
 			name: 'elf',
 			imageUrl: 'elf.jpg',
-			abilityBoost: [EAbility.DEX, EAbility.INT, EAbility.FRE],
-			abilityFlaw: [EAbility.CON],
+			ancestryAbilityBoost: [EAbility.DEX, EAbility.INT, EAbility.FRE],
+			ancestryAbilityFlaw: [EAbility.CON],
 			isClicked: false,
 		},
 		{
 			id: 2,
 			name: 'dwarf',
 			imageUrl: 'dwarf.jpg',
-			abilityBoost: [EAbility.CON, EAbility.WIS, EAbility.FRE],
-			abilityFlaw: [EAbility.CHA],
+			ancestryAbilityBoost: [EAbility.CON, EAbility.WIS, EAbility.FRE],
+			ancestryAbilityFlaw: [EAbility.CHA],
 			isClicked: false,
 		},
 		{
 			id: 3,
 			name: 'gnome',
 			imageUrl: 'gnome.png',
-			abilityBoost: [EAbility.CON, EAbility.CHA, EAbility.FRE],
-			abilityFlaw: [EAbility.STR],
+			ancestryAbilityBoost: [EAbility.CON, EAbility.CHA, EAbility.FRE],
+			ancestryAbilityFlaw: [EAbility.STR],
 			isClicked: false,
 		},
 		{
 			id: 4,
 			name: 'goblin',
 			imageUrl: 'goblin.jpg',
-			abilityBoost: [EAbility.DEX, EAbility.CHA, EAbility.FRE],
-			abilityFlaw: [EAbility.WIS],
+			ancestryAbilityBoost: [EAbility.DEX, EAbility.CHA, EAbility.FRE],
+			ancestryAbilityFlaw: [EAbility.WIS],
 			isClicked: false,
 		},
 		{
 			id: 5,
 			name: 'halfling',
 			imageUrl: 'halfling.jpg',
-			abilityBoost: [EAbility.DEX, EAbility.WIS, EAbility.FRE],
-			abilityFlaw: [EAbility.STR],
+			ancestryAbilityBoost: [EAbility.DEX, EAbility.WIS, EAbility.FRE],
+			ancestryAbilityFlaw: [EAbility.STR],
 			isClicked: false,
 		},
 		{
 			id: 6,
 			name: 'human',
 			imageUrl: 'human.jpg',
-			abilityBoost: [EAbility.FRE, EAbility.FRE],
-			abilityFlaw: [EAbility.NUL],
+			ancestryAbilityBoost: [EAbility.FRE, EAbility.FRE],
+			ancestryAbilityFlaw: [EAbility.NUL],
 			isClicked: false,
 		},
 	]);
@@ -130,8 +134,8 @@ export const AncestrySelection: React.FC<IAncestrySelection> = (props) => {
 		});
 
 		dispatch(setAncestry(selectedAncestry?.name));
-		dispatch(setAbilityFlaw(selectedAncestry?.abilityFlaw));
-		dispatch(setAbilityBoost(selectedAncestry?.abilityBoost));
+		dispatch(setAncestryAbilityFlaw(selectedAncestry?.ancestryAbilityFlaw));
+		dispatch(setAncestryAbilityBoost(selectedAncestry?.ancestryAbilityBoost));
 		setAncestries(newAncestries);
 	};
 

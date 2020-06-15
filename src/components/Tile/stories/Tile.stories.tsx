@@ -11,8 +11,8 @@ storiesOf('Tiles', module)
 			id: 1,
 			name: 'elf',
 			imageUrl: 'elf.jpg',
-			abilityBoost: [EAbility.DEX, EAbility.INT, EAbility.FRE],
-			abilityFlaw: [EAbility.CON],
+			ancestryAbilityBoost: [EAbility.DEX, EAbility.INT, EAbility.FRE],
+			ancestryAbilityFlaw: [EAbility.CON],
 			isClicked: false,
 		};
 		return (
@@ -24,8 +24,8 @@ storiesOf('Tiles', module)
 			id: 1,
 			name: 'elf',
 			imageUrl: 'elf.jpg',
-			abilityBoost: [EAbility.DEX, EAbility.INT, EAbility.FRE],
-			abilityFlaw: [EAbility.CON],
+			ancestryAbilityBoost: [EAbility.DEX, EAbility.INT, EAbility.FRE],
+			ancestryAbilityFlaw: [EAbility.CON],
 			isClicked: true,
 		};
 		return (

@@ -29,6 +29,7 @@
 	"ancestry.human.description": "Humans are incredibly diverse. Some, such as half-elves and half-orcs, even have non-human ancestors.",
 	"ancestry.dwarf": "Dwarf",
 	"ancestry.dwarf.description": "Dwarves are a short, stocky xpeople who are xoften stubborn, xfierce, and devoted.",
+	"class.error": "Please select an Class.",
 	"class.alchemist": "Alchemist",
 	"class.alchemist.description": "The alchemist throws alchemical bombs and drinks concoctions of their own making.",
 	"class.barbarian": "Barbarian",
