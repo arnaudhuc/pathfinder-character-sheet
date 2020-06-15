@@ -3,11 +3,11 @@ import { jsx } from '@emotion/core';
 import { storiesOf } from '@storybook/react';
 import { Tile } from '../Tile';
 import { EAbility } from '../../../models/enum/ability';
-import { IAncestries } from '../../../models/interface/ancestries';
+import { ITileInfo } from '../../../models/interface/ancestries';
 
 storiesOf('Tiles', module)
 	.add('Default', () => {
-		const ancestry: IAncestries = {
+		const ancestry: ITileInfo = {
 			id: 1,
 			name: 'elf',
 			imageUrl: 'elf.jpg',
@@ -18,7 +18,7 @@ storiesOf('Tiles', module)
 		return <Tile ancestry={ancestry} handleClick={() => true} />;
 	})
 	.add('Clicked', () => {
-		const ancestry: IAncestries = {
+		const ancestry: ITileInfo = {
 			id: 1,
 			name: 'elf',
 			imageUrl: 'elf.jpg',

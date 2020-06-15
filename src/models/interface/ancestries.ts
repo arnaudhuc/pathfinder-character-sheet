@@ -1,6 +1,6 @@
 import { EAbility } from '../enum/ability';
 
-export interface IAncestries {
+export interface ITileInfo {
 	id: number;
 	name: string;
 	imageUrl: string;

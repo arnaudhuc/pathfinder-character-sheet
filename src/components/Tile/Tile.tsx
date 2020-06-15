@@ -12,11 +12,11 @@ import { green } from '@material-ui/core/colors';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import { Divider } from '@material-ui/core';
 
-import { IAncestries } from '../../models/interface/ancestries';
+import { ITileInfo } from '../../models/interface/ancestries';
 
 interface ITile {
 	handleClick: (id: number) => void;
-	ancestry: IAncestries;
+	ancestry: ITileInfo;
 }
 
 export const Tile: React.FC<ITile> = (props) => {

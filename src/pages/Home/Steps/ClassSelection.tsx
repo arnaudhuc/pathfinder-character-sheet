@@ -1,25 +1,25 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import Slider from 'react-slick';
+import { useState, useLayoutEffect, Dispatch, SetStateAction } from 'react';
 import {
-	useEffect as useLayoutEffect,
-	Dispatch,
-	SetStateAction,
-	useState,
-} from 'react';
-import { useDispatch } from 'react-redux';
-import { Stepper } from '../../../components/Stepper/Stepper';
+	Card,
+	Slider,
+	makeStyles,
+	createStyles,
+	Typography,
+} from '@material-ui/core';
 import CardContent from '@material-ui/core/CardContent';
-import { makeStyles, createStyles, Card, Typography } from '@material-ui/core';
-import { actions } from '../../../redux/reducers/characterInfosSlice';
-import { Tile } from '../../../components/Tile/Tile';
+
+import { Stepper } from '../../../components/Stepper/Stepper';
+import { sliderSettings } from '../../../conf/slick';
 import { ITileInfo } from '../../../models/interface/ancestries';
 import { EAbility } from '../../../models/enum/ability';
+import { useDispatch } from 'react-redux';
+import { actions } from '../../../redux/reducers/characterInfosSlice';
 import { useIntl } from 'react-intl';
+import { Tile } from '../../../components/Tile/Tile';
 
-import { sliderSettings } from '../../../conf/slick';
-
-interface IAncestrySelection {
+interface IClassSelection {
 	currentStep: number;
 	shouldSubmit: boolean;
 	setCurrentStep: Dispatch<SetStateAction<number>>;
@@ -34,7 +34,7 @@ const useStyle = makeStyles(() =>
 	}),
 );
 
-export const AncestrySelection: React.FC<IAncestrySelection> = (props) => {
+export const ClassSelection: React.FC<IClassSelection> = (props) => {
 	const { currentStep, shouldSubmit, setCurrentStep, setSubmit } = props;
 
 	const classes = useStyle();
