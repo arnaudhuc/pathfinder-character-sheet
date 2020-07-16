@@ -32,7 +32,7 @@
 		"react-scripts": "3.4.1",
 		"react-slick": "0.26.1",
 		"reselect": "4.0.0",
-		"typescript": "3.9.6"
+		"typescript": "3.9.7"
 	},
 	"scripts": {
 		"start": "react-scripts start",
