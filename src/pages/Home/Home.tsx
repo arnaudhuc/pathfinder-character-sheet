@@ -11,11 +11,12 @@ import { EColor } from '../../enums/button';
 import { characterName } from '../../redux/selectors/playerSelectors';
 import { CharacterName } from './Steps/CharacterName';
 import { AncestrySelection } from './Steps/AncestrySelection';
+import { ValueAbility } from './Steps/ValueAbility';
 import { Error } from './Error';
 import { ClassSelection } from './Steps/ClassSelection';
 
 export const Home = () => {
-	const [currentStep, setCurrentStep] = useState(3);
+	const [currentStep, setCurrentStep] = useState(4);
 	const [shouldSumbit, setSubmit] = useState(false);
 
 	let characterNameSelector = useSelector(characterName);
@@ -65,12 +66,22 @@ export const Home = () => {
 								setSubmit={setSubmit}
 							/>
 						);
+					case 4:
+						return (
+							<ValueAbility
+								currentStep={currentStep}
+								setCurrentStep={setCurrentStep}
+								shouldSubmit={shouldSumbit}
+								setSubmit={setSubmit}
+							/>
+						);
 					default:
 						return <Error />;
 				}
 			})()}
 
 			<div css={{ display: 'flex', justifyContent: 'center' }}>
+				{characterNameSelector}
 				{currentStep !== 1 && (
 					<CustomButton
 						handleClick={handleBackButton}

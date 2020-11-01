@@ -149,7 +149,7 @@ export const ClassSelection: React.FC<IClassSelection> = (props) => {
 			setCurrentStep(currentStep + 1);
 			return setSubmit(false);
 		}
-	}, [shouldSubmit, dispatch, setCurrentStep, setSubmit]);
+	}, [shouldSubmit, dispatch, setCurrentStep, setSubmit, characterClass, currentStep]);
 
 	const { formatMessage } = useIntl();
 

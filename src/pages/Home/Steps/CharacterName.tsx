@@ -19,7 +19,6 @@ import { useDispatch } from 'react-redux';
 
 import { TextInput } from '../../../components/TextInput/TextInput';
 import { actions } from '../../../redux/reducers/playerInfosSlice';
-import React from 'react';
 import { Stepper } from '../../../components/Stepper/Stepper';
 
 const useStyle = makeStyles(() =>
@@ -85,6 +84,7 @@ export const CharacterName: React.FC<ICharacterName> = (props) => {
 		setCharacterName,
 		setCurrentStep,
 		setSubmit,
+		currentStep
 	]);
 
 	const handleOnChangePlayerName = () => {

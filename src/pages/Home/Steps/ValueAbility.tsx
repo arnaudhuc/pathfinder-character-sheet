@@ -34,7 +34,7 @@ const useStyle = makeStyles(() =>
 	}),
 );
 
-export const AncestrySelection: React.FC<IAncestrySelection> = (props) => {
+export const ValueAbility: React.FC<IAncestrySelection> = (props) => {
 	const { currentStep, shouldSubmit, setCurrentStep, setSubmit } = props;
 
 	const classes = useStyle();
@@ -111,7 +111,7 @@ export const AncestrySelection: React.FC<IAncestrySelection> = (props) => {
 			setCurrentStep(currentStep + 1);
 			return setSubmit(false);
 		}
-	}, [shouldSubmit, dispatch, setCurrentStep, setSubmit, ancestries, currentStep]);
+	}, [shouldSubmit, dispatch, setCurrentStep, setSubmit]);
 
 	const { formatMessage } = useIntl();
 
@@ -150,18 +150,6 @@ export const AncestrySelection: React.FC<IAncestrySelection> = (props) => {
 							{formatMessage({ id: 'ancestry.error' })}
 						</Typography>
 					)}
-					<div>
-						<Slider {...sliderSettings}>
-							{ancestries.map((ancestry) => (
-								<Tile
-									ancestry={ancestry}
-									handleClick={handleTileClick}
-									key={ancestry.id}
-									tileType="ancestry"
-								/>
-							))}
-						</Slider>
-					</div>
 				</CardContent>
 			</Card>
 		</div>
