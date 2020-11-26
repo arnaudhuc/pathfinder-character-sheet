@@ -63,7 +63,7 @@
 		"@storybook/addon-links": "6.1.7",
 		"@storybook/addons": "6.1.7",
 		"@storybook/preset-create-react-app": "3.1.5",
-		"@storybook/react": "6.1.6",
+		"@storybook/react": "6.1.7",
 		"@types/react-router-dom": "5.1.6",
 		"@typescript-eslint/eslint-plugin": "4.8.2",
 		"@typescript-eslint/parser": "4.8.2",
